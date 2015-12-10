@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="none">
+  <test name="Test">
+    <classes>
+      <class name="com.vsii.tsc.guru.testbase.TestBase"/>
+      <class name="com.vsii.tsc.guru.testcase.Login"/>
+<!--       <class name="com.vsii.tsc.guru.testcase.NewCustomer"/> -->
+      <class name="com.vsii.tsc.guru.testcase.EditCustomer"/>
+<!--       <class name="com.vsii.tsc.guru.testcase.DeleteCustomer"/> -->
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
