@@ -1,12 +1,32 @@
 package com.vsii.tsc.guru.utility;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import org.apache.commons.collections.MultiHashMap;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class CommonOperations {
+import com.vsii.tsc.guru.report.ExtentReporterNG;
+import com.vsii.tsc.guru.testbase.TestBase;
 
+@SuppressWarnings("deprecation")
+public class CommonOperations {
+	
+    List<String> list = null;
+
+    public static void closePopup(){
+    	Alert alert = TestBase.driver.switchTo().alert();
+		alert.accept();
+    }
+    
 	//Get Alert
 	public static boolean isAlertPresent(WebDriver driver){
 	    boolean foundAlert = false;
@@ -19,5 +39,46 @@ public class CommonOperations {
 	    }
 	    return foundAlert;
 	}
-
+	//Check duplicated in list
+	public static boolean checkDuplicate(List<String> methodList) {
+		 HashSet set = new HashSet();
+		 for (int i = 0; i < methodList.size(); i++) {
+		  boolean val = set.add(methodList.get(i));
+		  if (val == false) {
+		  	return val;
+		  }
+		 }
+		 return true;
+		}
+	//Count duplicated Value in list
+	public static int countDuplicatedValue(List<String> methodList, String searchText){
+		int i;
+		for(i=0;i<methodList.size();i++){
+			for(String s: methodList){
+				if(methodList.get(i).equals(searchText));
+				i++;
+			}
+		}
+		return i;
+		
+	}
+	//Take picture after test
+	public static void takePicture() throws Exception{
+		TestBase.imageName = TestBase.methodName+"_"+DateTime.createDateText();
+		//Capture popup
+		if (CommonOperations.isAlertPresent(TestBase.driver)) {
+			String dir = TestBase.p.getProperty("imagePath");
+			CreateDirectory.createDir(dir);
+			ExtentReporterNG.captureScreenShotPopUp(dir + TestBase.imageName);
+			TestBase.imageList.add(TestBase.imageName);
+			
+			closePopup();
+		} 
+		//Capture screen
+		else {
+			ExtentReporterNG.CaptureScreen(TestBase.driver, TestBase.imageName);
+			TestBase.imageList.add(TestBase.imageName);
+			
+		}
+	}
 }

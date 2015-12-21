@@ -1,30 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]" parallel="none">
-  <test name="Test(failed)" parallel="none">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <listeners>
+    <listener class-name="com.vsii.tsc.guru.report.ExtentReportNGCapture"/>
+    <listener class-name="com.vsii.tsc.guru.report.ExtentReporterNG"/>
+  </listeners>
+  <test name="Test Guru(failed)">
     <classes>
+      <class name="com.vsii.tsc.guru.testcase.Login">
+        <methods>
+          <include name="afterMethod"/>
+          <include name="setupClass"/>
+          <include name="TC02"/>
+        </methods>
+      </class> <!-- com.vsii.tsc.guru.testcase.Login -->
       <class name="com.vsii.tsc.guru.testbase.TestBase">
         <methods>
           <include name="setupSuite"/>
           <include name="teardownSuite"/>
         </methods>
       </class> <!-- com.vsii.tsc.guru.testbase.TestBase -->
-      <class name="com.vsii.tsc.guru.testcase.Login">
-        <methods>
-          <include name="afterMethod"/>
-          <include name="teardownClass"/>
-          <include name="beforeMethod"/>
-          <include name="setupClass"/>
-        </methods>
-      </class> <!-- com.vsii.tsc.guru.testcase.Login -->
-      <class name="com.vsii.tsc.guru.testcase.EditCustomer">
-        <methods>
-          <include name="setupClass"/>
-          <include name="teardownClass"/>
-          <include name="TC_25" invocation-numbers="0"/>
-          <include name="TC_24"/>
-        </methods>
-      </class> <!-- com.vsii.tsc.guru.testcase.EditCustomer -->
     </classes>
-  </test> <!-- Test(failed) -->
+  </test> <!-- Test Guru(failed) -->
 </suite> <!-- Failed suite [Suite] -->

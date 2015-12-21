@@ -1,4 +1,4 @@
-package com.vsii.tsc.guru.testcase;
+/*package com.vsii.tsc.guru.testcase;
 
 
 import java.io.IOException;
@@ -43,8 +43,8 @@ public class DeleteCustomer extends TestBase {
 		} else {
 			test.log(LogStatus.FAIL, "Popup text displays incorrectly");
 		}
-		/*test.log(LogStatus.INFO, test.addScreenCapture(
-				Report.captureScreenShotPopUp("C:/Users/hungnt2/git/selenium/report/screenshot/TC20")));*/
+		test.log(LogStatus.INFO, test.addScreenCapture(
+				Report.captureScreenShotPopUp("C:/Users/hungnt2/git/selenium/report/screenshot/TC20")));
 		objDeleteCustomer.closePopup();
 	}
 
@@ -59,3 +59,4 @@ public class DeleteCustomer extends TestBase {
 		test.log(LogStatus.INFO, test.addScreenCapture(Report.CaptureScreen(driver, "TC11")));
 	}
 }
+*/

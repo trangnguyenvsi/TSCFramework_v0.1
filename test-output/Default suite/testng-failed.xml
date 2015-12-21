@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Default suite]">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.vsii.tsc.guru.testcase.Login">
+      <class name="com.vsii.tsc.guru.testcase.TestDownloadUpload">
         <methods>
-          <include name="TC_01"/>
-          <include name="setupClass"/>
+          <include name="OpenURL"/>
         </methods>
-      </class> <!-- com.vsii.tsc.guru.testcase.Login -->
+      </class> <!-- com.vsii.tsc.guru.testcase.TestDownloadUpload -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

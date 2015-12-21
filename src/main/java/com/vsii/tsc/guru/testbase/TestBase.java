@@ -2,11 +2,15 @@ package com.vsii.tsc.guru.testbase;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 
+import org.apache.commons.collections.MultiHashMap;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -18,19 +22,30 @@ import org.testng.annotations.BeforeTest;
 
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
-import com.vsii.tsc.guru.report.Report;
+import com.vsii.tsc.guru.report.ExtentReporterNG;
+import com.vsii.tsc.guru.utility.DateTime;
+import com.vsii.tsc.guru.utility.DownloadUploadFile;
 import com.vsii.tsc.guru.utility.Utility;
 
 public class TestBase {
-	public static  WebDriver driver;
+	public static WebDriver driver;
 	public static Properties p;
 	public static ExtentReports extent;
 	public static ExtentTest test;
+	public static FirefoxProfile fprofile;
+	public static List<String> imageList;
+	public static String methodName;
+	public static String image;
+	public static String  imageName;
+	public static MultiHashMap testList;
 	
 	@BeforeSuite
 	public void setupSuite() throws IOException {
 		// Read config file
 		p = Utility.readConfig();
+		imageList = new ArrayList<String>();
+		testList = new MultiHashMap();
+	
 		
 		if(p.getProperty("local").equals("No")){
 		
@@ -47,7 +62,13 @@ public class TestBase {
 			switch (p.getProperty("browserName")) {
 			// Open Firefox browser
 			case ("Firefox"):
-				driver = new FirefoxDriver();
+				fprofile = new FirefoxProfile();
+			
+			 	DownloadUploadFile fileObj = new DownloadUploadFile(TestBase.fprofile);
+			 	//Setup for Firefox profile
+				fileObj.setupDownloadFile(p.getProperty("downloadLocation"));
+				
+				driver = new FirefoxDriver(fprofile);
 				break;
 			// Open Chrome browser
 			case ("Chrome"):
@@ -71,12 +92,12 @@ public class TestBase {
 			driver.get(p.getProperty("baseUrl"));
 			driver.manage().window().maximize();
 			//Create instance of report
-			extent = Report.Instance();
+			//extent = ExtentReporterNG.Instance();
 	}
 	
 	@AfterSuite
 	public void teardownSuite(){
-		driver.quit();
+		//driver.quit();
 		
 	}
 	
