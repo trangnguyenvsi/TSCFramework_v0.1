@@ -5,13 +5,20 @@
     <listener class-name="com.vsii.tsc.guru.report.ExtentReportNGCapture"/>
     <listener class-name="com.vsii.tsc.guru.report.ExtentReporterNG"/>
   </listeners>
-  <test name="Test Guru(failed)">
+  <test name="NewCustomer(failed)">
     <classes>
+      <class name="com.vsii.tsc.guru.testcase.NewCustomer">
+        <methods>
+          <include name="CN02" invocation-numbers="0"/>
+          <include name="afterMethod"/>
+          <include name="setupClass"/>
+        </methods>
+      </class> <!-- com.vsii.tsc.guru.testcase.NewCustomer -->
       <class name="com.vsii.tsc.guru.testcase.Login">
         <methods>
           <include name="afterMethod"/>
+          <include name="teardownClass"/>
           <include name="setupClass"/>
-          <include name="TC02"/>
         </methods>
       </class> <!-- com.vsii.tsc.guru.testcase.Login -->
       <class name="com.vsii.tsc.guru.testbase.TestBase">
@@ -21,5 +28,5 @@
         </methods>
       </class> <!-- com.vsii.tsc.guru.testbase.TestBase -->
     </classes>
-  </test> <!-- Test Guru(failed) -->
+  </test> <!-- NewCustomer(failed) -->
 </suite> <!-- Failed suite [Suite] -->

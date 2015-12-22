@@ -1,7 +1,10 @@
 package com.vsii.tsc.guru.data;
 
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Factory;
 
+import com.vsii.tsc.guru.testcase.Login;
+import com.vsii.tsc.guru.testcase.NewCustomer;
 import com.vsii.tsc.guru.utility.Utility;;
 
 public class TestData {
@@ -28,6 +31,6 @@ public class TestData {
 		Object[][] loginData = Utility.getTable("./data/TestData.xlsx", "Customer", "TC_03");
 		return loginData;
 	}
-
+	
 	
 }

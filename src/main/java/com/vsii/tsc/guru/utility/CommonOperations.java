@@ -11,6 +11,7 @@ import org.apache.commons.collections.MultiHashMap;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -80,5 +81,15 @@ public class CommonOperations {
 			TestBase.imageList.add(TestBase.imageName);
 			
 		}
+	}
+	//Verify Element Present
+	public static boolean verifyElementPresent(WebElement element){
+		
+	        if(element.isDisplayed()){
+	        	return true;
+	        } else
+	        	return false;
+	        
+	    
 	}
 }

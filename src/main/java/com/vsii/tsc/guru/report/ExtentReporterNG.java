@@ -7,6 +7,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
@@ -57,11 +58,16 @@ public class ExtentReporterNG implements IReporter {
 
 			for (ISuiteResult r : result.values()) {
 				ITestContext context = r.getTestContext();
-				System.out.println("Test Name is"+context.getName());
 				
+				//Open excel file with the sheet name is the test name in testng.xml
 				try {
 					Utility.openExcelFile(TestBase.p.getProperty("tcFile"), context.getName(),
-							Integer.parseInt(TestBase.p.getProperty("tcID_Column")));
+							Integer.parseInt(TestBase.p.getProperty("tcIDCol")),Integer.parseInt(TestBase.p.getProperty("tcDescCol")),Integer.parseInt(TestBase.p.getProperty("tcStepCol")));
+					
+					 System.out.println(TestBase.p.getProperty("tcIDCol"));
+					 System.out.println(TestBase.p.getProperty("tcDescCol"));
+					 System.out.println(TestBase.p.getProperty("tcStepCol"));
+					 
 				} catch (NumberFormatException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -72,15 +78,14 @@ public class ExtentReporterNG implements IReporter {
 				
 					try {
 						buildTestNodes(context.getPassedTests(), LogStatus.PASS);
-						//Utility.writeTestResults(ExtentReporterNG.method, 5, "Passed");
 						buildTestNodes(context.getFailedTests(), LogStatus.FAIL);
-						//Utility.writeTestResults(ExtentReporterNG.method, 5, "Failed");
 						buildTestNodes(context.getSkippedTests(), LogStatus.SKIP);
-						//Utility.writeTestResults(ExtentReporterNG.method, 5, "Failed");
+					
 					} catch (IOException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
+					//Create test result file for each test
 					Utility.createExcelFile(TestBase.p.getProperty("resultpath")+"Guru_TestCase_"+context.getName()+".xlsx");
 			}
 			
@@ -102,11 +107,6 @@ public class ExtentReporterNG implements IReporter {
 			for (ITestResult result : tests.getAllResults()) {
 				method = result.getMethod().getMethodName();
 				test = extent.startTest(result.getMethod().getMethodName());
-
-				// test.getTest().startedTime =
-				// getTime(result.getStartMillis());
-				// test.getTest().endedTime = getTime(result.getEndMillis());
-
 				for (String group : result.getMethod().getGroups())
 					test.assignCategory(group);
 
@@ -138,12 +138,19 @@ public class ExtentReporterNG implements IReporter {
 					
 						if (imageTestCase.equals(method)) {
 							test.log(LogStatus.INFO, test.addScreenCapture(p.getProperty("imagePath") + image + ".jpg"));
-							//System.out.println("Image:"+p.getProperty("imagePath") + image + ".jpg");
 							TestBase.imageList.remove(image);	
 							break;
 						} 
 						
 					}
+				 	Iterator it = Utility.createHashMap(Utility.tcIDList, Utility.tcDescList).entrySet().iterator();
+				    while (it.hasNext()) {
+				        Map.Entry pair = (Map.Entry)it.next();
+				        if(pair.getKey().equals(method)){
+				        	test.log(LogStatus.INFO,(Throwable) pair.getValue());
+				        }
+				    	break;
+				    }
 				
 				extent.endTest(test);
 				

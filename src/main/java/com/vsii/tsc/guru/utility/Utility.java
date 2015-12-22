@@ -8,6 +8,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Properties;
@@ -28,12 +29,18 @@ public class Utility {
 	static XSSFSheet sheet;
 	static XSSFRow row;
 	static Cell cell;
+//	public static int tcIDCol;
+//	public static int tcDescCol;
+//	public static int tcStepCol;
 	
 	//Use for getTable() method
 //	static String testData[][];
 	
 	//Use for writeTestResults() method
-	static ArrayList<String> valueList;
+	public static ArrayList<String> tcIDList;
+	public static ArrayList<String> tcDescList;
+	public static ArrayList<String> tcStepList;
+	public static HashMap<String,String> testcaseList;
 	
 //--------------------------------------------------Methods--------------------------------------------------------------------
 /*
@@ -163,7 +170,7 @@ public class Utility {
 
 		// Col is Test Case ID's column
 		columnWanted = tcIDCol;
-		for (int r = 0;r<sheet.getLastRowNum(); r++) {
+		for (int r = 13;r<sheet.getLastRowNum(); r++) {
 		  Cell c = null;	
 		  Row row1 = sheet.getRow(r);
 		  c = row1.getCell(columnWanted);
@@ -185,7 +192,7 @@ public class Utility {
 /*
  * Open excel file
  */
-		public static void openExcelFile(String filePath, String sheetName, int tcIDCol) throws IOException{
+		public static void openExcelFile(String filePath, String sheetName,int tcIDCol,int tcDescCol,int tcStepCol) throws IOException{
 		file = new FileInputStream(new File(filePath));
         workbook = new XSSFWorkbook(file);
     
@@ -193,7 +200,9 @@ public class Utility {
         sheet = workbook.getSheet(sheetName);
         
         //list of test case name
-        valueList= (ArrayList<String>) Utility.loadCellValueList(sheetName, tcIDCol);
+        tcIDList= (ArrayList<String>) Utility.loadCellValueList(sheetName, tcIDCol);
+        tcDescList= (ArrayList<String>) Utility.loadCellValueList(sheetName, tcDescCol);
+        tcStepList= (ArrayList<String>) Utility.loadCellValueList(sheetName, tcStepCol);
 		
 }
 //-------------------------------------------------------------------------------------------------------------------------------
@@ -203,7 +212,7 @@ public class Utility {
 	public static void writeTestResults(String caseName, int writtenCol, String testResult) throws IOException{
 		String cellColor = "";
 	
-		for (String cellContent:valueList){
+		for (String cellContent:tcIDList){
 				//If find the test case ID equal to the name of test method, fill the test results.
 			if(cellContent.equalsIgnoreCase(caseName)){
 					System.out.println(cellContent);
@@ -264,5 +273,17 @@ public static void createExcelFile(String fileName){
     }
 }
 	
-	
+/*
+ * Read from excel column by search text
+ */
+	public static HashMap<String,String> createHashMap(List<String> tcIDList, List<String> tcDescList){
+		testcaseList = new HashMap<String,String>();
+		for(int i =0; i<tcIDList.size();i++)
+		{
+			testcaseList.put(tcIDList.get(i), tcDescList.get(i));
+			System.out.println(tcIDList.get(i)+"|"+tcDescList.get(i));
+		}
+		return testcaseList;
+		
+	}
 }

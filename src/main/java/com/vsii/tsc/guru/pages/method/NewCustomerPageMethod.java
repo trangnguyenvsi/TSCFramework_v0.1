@@ -19,7 +19,7 @@ public class NewCustomerPageMethod {
 	// Enter data and create new customer
 	public void createNewCustomer(String name, String dob, String address, String city, String state, String pin,
 			String mobileNumber, String email, String password) {
-		objNewCust.getWebNewCustomer().click();
+	
 		objNewCust.getWebCustomerName().sendKeys(name);
 		objNewCust.getWebGender().click();
 		objNewCust.getWebDob().sendKeys(dob);
@@ -43,5 +43,13 @@ public class NewCustomerPageMethod {
 	public String getCustomerID() {
 		log.debug("Get customer ID after register successfully");
 		return objNewCust.getCustomerID().getText();
+	}
+	
+	public String getTitleForm(){
+		return objNewCust.getTitleFormNewCustomer().getText();
+	}
+	
+	public void gotoNewCustomerForm(){
+		objNewCust.getWebNewCustomer().click();
 	}
 }

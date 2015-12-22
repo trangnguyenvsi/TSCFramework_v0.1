@@ -43,6 +43,17 @@ public class NewCustomerPage {
 	@FindBy(linkText="New Customer")
 	private WebElement webNewCustomer;
 	
+	@FindBy(xpath="html/body/table/tbody/tr/td/table/tbody/tr[1]/td/p")
+	private WebElement titleFormNewCustomer;
+	
+	public WebElement getTitleFormNewCustomer() {
+		return titleFormNewCustomer;
+	}
+
+	public void setTitleFormNewCustomer(WebElement titleFormNewCustomer) {
+		this.titleFormNewCustomer = titleFormNewCustomer;
+	}
+
 	public WebElement getCustomerID() {
 		return customerID;
 	}

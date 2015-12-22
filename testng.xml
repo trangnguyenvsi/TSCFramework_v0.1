@@ -15,4 +15,14 @@
 <!--        <class name="com.vsii.tsc.guru.testcase.TestDownloadUpload"/> -->
     </classes>
     </test>
+    <test name="NewCustomer" preserve-order="true">
+    <classes>
+    	<class name="com.vsii.tsc.guru.testbase.TestBase"/>
+      	<class name="com.vsii.tsc.guru.data.TestDataFactory"/>
+      	<class name="com.vsii.tsc.guru.testcase.NewCustomer"/>
+<!--       	<class name="com.vsii.tsc.guru.testcase.EditCustomer"/> -->
+<!--       	<class name="com.vsii.tsc.guru.testcase.DeleteCustomer"/> -->
+<!--        <class name="com.vsii.tsc.guru.testcase.TestDownloadUpload"/> -->
+    </classes>
+    </test>
 </suite> <!-- Suite -->

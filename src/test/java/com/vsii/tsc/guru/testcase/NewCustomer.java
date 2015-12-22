@@ -1,122 +1,82 @@
 package com.vsii.tsc.guru.testcase;
 
 
-import java.io.IOException;
-
+import org.openqa.selenium.By;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Factory;
 import org.testng.annotations.Test;
 
-import com.relevantcodes.extentreports.LogStatus;
 import com.vsii.tsc.guru.data.TestData;
+import com.vsii.tsc.guru.pages.LoginPage;
 import com.vsii.tsc.guru.pages.method.EditCustomerPageMethod;
 import com.vsii.tsc.guru.pages.method.LoginPageMethod;
 import com.vsii.tsc.guru.pages.method.NewCustomerPageMethod;
 import com.vsii.tsc.guru.testbase.TestBase;
 import com.vsii.tsc.guru.utility.CommonOperations;
-import com.vsii.tsc.guru.utility.Utility;
 
-public class NewCustomer extends TestBase {
+public class NewCustomer{
+	LoginPageMethod objLogin;
 	NewCustomerPageMethod objNewCust;
 	EditCustomerPageMethod objEditCust;
-	LoginPageMethod objLogin;
+	String username;
+	String password;
+	
+	//Use constructor for Factory
+	public NewCustomer(String username, String password){
+		this.username = username;
+		this.password = password;
+	}
+	
+	public void login() throws Exception {
+		//If not login, system perform login
+		if(TestBase.driver.findElements(By.name("uid")).size()!=0){
+			objLogin.loginToManagerPage(username, password);
+		}
+	}
 	
 	@BeforeClass
-	public void setupClass() throws NumberFormatException, IOException{
-		//Utility.openExcelFile(p.getProperty("tcFile"),p.getProperty("NewCustomer_Module"),Integer.parseInt(p.getProperty("tcID")));
-		objLogin = new LoginPageMethod(driver);
-		objNewCust = new NewCustomerPageMethod(driver);
-		objEditCust = new EditCustomerPageMethod(driver);
+	public void setupClass() throws Exception{
+		objLogin = new LoginPageMethod(TestBase.driver);
+		objNewCust = new NewCustomerPageMethod(TestBase.driver);
+		objEditCust = new EditCustomerPageMethod(TestBase.driver);
+		login();
 	}
 	
-	@BeforeMethod
-	public void beforMethod() throws IOException{
-	}
-	
-	@Test(priority = 0, dataProvider = "dpLogin_success", dataProviderClass = TestData.class)
-	public void Login(String username, String password, String message) throws Exception {
-		//Login success
-		//objLogin.loginToManagerPage(username, password);
-	}
-
-	@Test(priority = 1, description = "Verify Add New Customer", dataProvider = "dpNewCustomer", dataProviderClass = TestData.class)
-	public void CN01(String name, String dob, String address, String city, String state, String pin,
-			String mobileNumber, String email, String password, String message) throws IOException {
-		
+	@Test(priority = 0)
+	public void CN01(){
+		//Get method name
 		class Local {};
 		TestBase.methodName = Local.class.getEnclosingMethod().getName();
 		
-		//Perform create new customer
+		objNewCust.gotoNewCustomerForm();
+		Assert.assertEquals(objNewCust.getTitleForm(),"Add New Customer");
+	}
+	
+	@Test(priority = 1, description = "Verify Add New Customer", dataProvider = "dpNewCustomer", dataProviderClass = TestData.class)
+	public void CN02(String name, String dob, String address, String city, String state, String pin,String mobileNumber, String email, String password, String message) throws Exception {
+		
+		class Local {};
+		TestBase.methodName = Local.class.getEnclosingMethod().getName();
+			
+		//create new customer
 		objNewCust.createNewCustomer(name, dob, address, city, state, pin, mobileNumber, email, password);
 	
 		try {
 			Thread.sleep(2000);
-		} catch (InterruptedException e1) {
-		
-			e1.printStackTrace();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
+		//Verify the message after create new customer
+		Assert.assertTrue(TestBase.driver.getPageSource().contains(message));
 		
-		if(driver.getPageSource().contains(message)){
-			Assert.assertTrue(driver.getPageSource().contains(message));
-		} 
-		else{
-			Assert.assertTrue(driver.getPageSource().contains(message));
-		}
-
 	}
 	
-	//@Test(priority = 2, description = "TC_12")
-	public void enter_Customer_ID_To_Edit() throws IOException {
-		String newCustomerID = objNewCust.getCustomerID();	
-		objEditCust.clickEditCustomer();
-		objEditCust.enterCustomerID(newCustomerID);
-		objEditCust.clickSubmit();
-		String custName = objEditCust.getCustomerNameLabel();
-		
-		//Write Log to test report
-		test = extent.startTest("Edit Customer");
-		test.log(LogStatus.INFO, "<b>EDIT CUSTOMER</b>");
-		
-		if(custName.contains("Customer Name")){				
-			test.log(LogStatus.PASS, "Edit customer successfully");
-		}
-		else
-		{
-			test.log(LogStatus.FAIL, "Edit customer page successfully");
-			Assert.assertTrue(custName.contains("Customer Name"));
-		}
-		
-	}
-
 	@AfterMethod
-	public void afterMethod(){
-
+	public void afterMethod() throws Exception{
 		CommonOperations.takePicture();
-		
 	}
-	
-//	@AfterClass
-//	public void teardown(){
-////		extent.flush();
-////		extent.close();
-////		driver.quit();
-////		//Write test results in test case file
-////		Utility.createExcelFile(p.getProperty("tcNewCustomerFile"));
-//	}
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-*/

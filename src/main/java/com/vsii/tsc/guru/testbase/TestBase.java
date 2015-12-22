@@ -37,14 +37,12 @@ public class TestBase {
 	public static String methodName;
 	public static String image;
 	public static String  imageName;
-	public static MultiHashMap testList;
 	
 	@BeforeSuite
 	public void setupSuite() throws IOException {
 		// Read config file
 		p = Utility.readConfig();
 		imageList = new ArrayList<String>();
-		testList = new MultiHashMap();
 	
 		
 		if(p.getProperty("local").equals("No")){

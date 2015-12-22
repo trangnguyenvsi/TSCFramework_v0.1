@@ -23,7 +23,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -37,7 +37,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Suite">
-              <span class="suite-name border-passed">Suite</span>
+              <span class="suite-name border-failed">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -53,7 +53,7 @@
                 </li>
                 <li>
                   <a href="#" class="navigator-link " panel-name="testlist-Suite">
-                    <span class="test-stats">1 test</span>
+                    <span class="test-stats">2 tests</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -90,7 +90,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">5 methods,   5 passed</span>
+                    <span class="method-stats">7 methods, 1 failed,   6 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Suite">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.vsii.tsc.guru.testcase.NewCustomer" hash-for-method="CN02(you, 10-10-1991, Hanoi, Hanoi, Hanoi, 201365, 1045, you41@gmail.com, 123456, Customer Registered Suc...)">CN02(you, 10-10-1991, Hanoi, Hanoi, Hanoi, 201365, 1045, you41@gmail.com, 123456, Customer Registered Suc...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -101,12 +115,17 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.vsii.tsc.guru.testcase.NewCustomer" hash-for-method="CN01">CN01</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.vsii.tsc.guru.testcase.Login" hash-for-method="TC01">TC01</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.vsii.tsc.guru.testcase.Login" hash-for-method="TC02(mngr22018, nAgezam , Manger Id : mngr22018)">TC02(mngr22018, nAgezam , Manger Id : mngr22018)</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.vsii.tsc.guru.testcase.Login" hash-for-method="TC02(mngr22018, 123456, User or Password is not valid)">TC02(mngr22018, 123456, User or Password is not valid)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -116,12 +135,12 @@
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.vsii.tsc.guru.testcase.Login" hash-for-method="TC02(Tester01, nAgezam , User or Password is not valid)">TC02(Tester01, nAgezam , User or Password is not valid)</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.vsii.tsc.guru.testcase.Login" hash-for-method="TC02(mngr22018, nAgezam , Manger Id : mngr22018)">TC02(mngr22018, nAgezam , Manger Id : mngr22018)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.vsii.tsc.guru.testcase.Login" hash-for-method="TC02(mngr22018, 123456, User or Password is not valid)">TC02(mngr22018, 123456, User or Password is not valid)</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.vsii.tsc.guru.testcase.Login" hash-for-method="TC02(Tester01, nAgezam , User or Password is not valid)">TC02(Tester01, nAgezam , User or Password is not valid)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -136,6 +155,39 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
+          <div class="suite-Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com.vsii.tsc.guru.testcase.NewCustomer</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="CN02(you, 10-10-1991, Hanoi, Hanoi, Hanoi, 201365, 1045, you41@gmail.com, 123456, Customer Registered Suc...)">
+                  </a> <!-- CN02(you, 10-10-1991, Hanoi, Hanoi, Hanoi, 201365, 1045, you41@gmail.com, 123456, Customer Registered Suc...) -->
+                  <span class="method-name">CN02</span>
+                  <span class="parameters">(you, 10-10-1991, Hanoi, Hanoi, Hanoi, 201365, 1045, you41@gmail.com, 123456, Customer Registered Successfully!!!)</span>
+                  <div class="stack-trace">org.openqa.selenium.UnhandledAlertException: Unexpected modal dialog (text: Email Address Already Exist !!): Email Address Already Exist !!
+Build info: version: &apos;2.48.2&apos;, revision: &apos;41bccdd10cf2c0560f637404c2d96164b67d9d67&apos;, time: &apos;2015-10-09 13:08:06&apos;
+System info: host: &apos;trangntt-PC&apos;, ip: &apos;192.168.100.31&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_25&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=43.0.1, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: bcf91133-8f95-49d6-8170-ad8b1bca62b9
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.createUnhandledAlertException(ErrorHandler.java:187)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:154)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:647)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:670)
+	at org.openqa.selenium.remote.RemoteWebDriver.getPageSource(RemoteWebDriver.java:501)
+	at com.vsii.tsc.guru.testcase.NewCustomer.CN02(NewCustomer.java:73)
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Verify Add New Customer)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-failed -->
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -153,10 +205,10 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="TC02(mngr22018, nAgezam , Manger Id : mngr22018)">
-                  </a> <!-- TC02(mngr22018, nAgezam , Manger Id : mngr22018) -->
+                  <a name="TC02(mngr22018, 123456, User or Password is not valid)">
+                  </a> <!-- TC02(mngr22018, 123456, User or Password is not valid) -->
                   <span class="method-name">TC02</span>
-                  <span class="parameters">(mngr22018, nAgezam , Manger Id : mngr22018)</span>
+                  <span class="parameters">(mngr22018, 123456, User or Password is not valid)</span>
                   <em>
 (verify Login)                  </em>
                 </div> <!-- method-content -->
@@ -173,6 +225,16 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
+                  <a name="TC02(mngr22018, nAgezam , Manger Id : mngr22018)">
+                  </a> <!-- TC02(mngr22018, nAgezam , Manger Id : mngr22018) -->
+                  <span class="method-name">TC02</span>
+                  <span class="parameters">(mngr22018, nAgezam , Manger Id : mngr22018)</span>
+                  <em>
+(verify Login)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
                   <a name="TC02(Tester01, nAgezam , User or Password is not valid)">
                   </a> <!-- TC02(Tester01, nAgezam , User or Password is not valid) -->
                   <span class="method-name">TC02</span>
@@ -181,14 +243,19 @@
 (verify Login)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.vsii.tsc.guru.testcase.NewCustomer</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="TC02(mngr22018, 123456, User or Password is not valid)">
-                  </a> <!-- TC02(mngr22018, 123456, User or Password is not valid) -->
-                  <span class="method-name">TC02</span>
-                  <span class="parameters">(mngr22018, 123456, User or Password is not valid)</span>
-                  <em>
-(verify Login)                  </em>
+                  <a name="CN01">
+                  </a> <!-- CN01 -->
+                  <span class="method-name">CN01</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -213,6 +280,13 @@
       &lt;class name=&quot;com.vsii.tsc.guru.testcase.Login&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Login --&gt;
+  &lt;test name=&quot;NewCustomer&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.vsii.tsc.guru.testbase.TestBase&quot;/&gt;
+      &lt;class name=&quot;com.vsii.tsc.guru.data.TestDataFactory&quot;/&gt;
+      &lt;class name=&quot;com.vsii.tsc.guru.testcase.NewCustomer&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- NewCustomer --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -225,6 +299,9 @@
             <ul>
               <li>
                 <span class="test-name">Login (2 classes)</span>
+              </li>
+              <li>
+                <span class="test-name">NewCustomer (3 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -250,32 +327,40 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(5);
+data.addRows(7);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'TC02')
 data.setCell(0, 2, 'com.vsii.tsc.guru.testcase.Login')
-data.setCell(0, 3, 4447);
+data.setCell(0, 3, 4371);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'TC02')
-data.setCell(1, 2, 'com.vsii.tsc.guru.testcase.Login')
-data.setCell(1, 3, 1939);
+data.setCell(1, 1, 'CN02')
+data.setCell(1, 2, 'com.vsii.tsc.guru.testcase.NewCustomer')
+data.setCell(1, 3, 3227);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'TC02')
 data.setCell(2, 2, 'com.vsii.tsc.guru.testcase.Login')
-data.setCell(2, 3, 1870);
+data.setCell(2, 3, 2423);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'TC02')
 data.setCell(3, 2, 'com.vsii.tsc.guru.testcase.Login')
-data.setCell(3, 3, 1846);
+data.setCell(3, 3, 2181);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'TC01')
+data.setCell(4, 1, 'TC02')
 data.setCell(4, 2, 'com.vsii.tsc.guru.testcase.Login')
-data.setCell(4, 3, 109);
+data.setCell(4, 3, 1842);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'CN01')
+data.setCell(5, 2, 'com.vsii.tsc.guru.testcase.NewCustomer')
+data.setCell(5, 3, 494);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'TC01')
+data.setCell(6, 2, 'com.vsii.tsc.guru.testcase.Login')
+data.setCell(6, 3, 130);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 10 seconds</span>
+              <span class="suite-total-time">Total running time: 14 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -311,58 +396,83 @@ return data;
               <div class="chronological-class-name">com.vsii.tsc.guru.testcase.Login</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setupClass</span>
-                <span class="method-start">8584 ms</span>
+                <span class="method-start">8968 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">TC01</span>
-                <span class="method-start">8625 ms</span>
+                <span class="method-start">8997 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">afterMethod</span>
-                <span class="method-start">8735 ms</span>
+                <span class="method-start">9128 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">TC02(Tester01, nAgezam , User or Password is not valid)</span>
-                <span class="method-start">11821 ms</span>
+                <span class="method-start">12173 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">afterMethod</span>
-                <span class="method-start">13668 ms</span>
+                <span class="method-start">14597 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">TC02(mngr22018, 123456, User or Password is not valid)</span>
-                <span class="method-start">14381 ms</span>
+                <span class="method-start">15227 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">afterMethod</span>
-                <span class="method-start">16321 ms</span>
+                <span class="method-start">17070 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">TC02(Tester02, 123456, User or Password is not valid)</span>
-                <span class="method-start">16661 ms</span>
+                <span class="method-start">17441 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">afterMethod</span>
-                <span class="method-start">18532 ms</span>
+                <span class="method-start">19623 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">TC02(mngr22018, nAgezam , Manger Id : mngr22018)</span>
-                <span class="method-start">18857 ms</span>
+                <span class="method-start">20003 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">afterMethod</span>
-                <span class="method-start">23305 ms</span>
+                <span class="method-start">24375 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">teardownClass</span>
-                <span class="method-start">25618 ms</span>
+                <span class="method-start">26765 ms</span>
               </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.vsii.tsc.guru.testcase.NewCustomer</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">setupClass</span>
+                <span class="method-start">26793 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">CN01</span>
+                <span class="method-start">26827 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod</span>
+                <span class="method-start">27322 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">CN02(you, 10-10-1991, Hanoi, Hanoi, Hanoi, 201365, 1045, you41@gmail.com, 123456, Customer Registered Suc...)</span>
+                <span class="method-start">29738 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod</span>
+                <span class="method-start">32986 ms</span>
+              </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.vsii.tsc.guru.testbase.TestBase</div> <!-- chronological-class-name -->
               <div class="configuration-suite after">
                 <span class="method-name">teardownSuite</span>
-                <span class="method-start">25641 ms</span>
+                <span class="method-start">35362 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

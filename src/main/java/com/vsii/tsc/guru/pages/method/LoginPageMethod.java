@@ -12,67 +12,67 @@ public class LoginPageMethod {
 	// Create new Web Driver variable
 	WebDriver driver;
 	// Create new WebElementLogin object
-	LoginPage objLogin = new LoginPage();
+	public LoginPage objLoginPage = new LoginPage();
 
 	// Initialize all web element
 	public LoginPageMethod(WebDriver driver) {
 		this.driver = driver;
-		PageFactory.initElements(driver, objLogin);
+		PageFactory.initElements(driver, objLoginPage);
 		log.debug("Initiate web driver");
 	}
 
 	// Enter user name in UserID text box
 	public void setUserID(String txtUsername) {		
-		objLogin.getWebUsername().sendKeys(txtUsername);
+		objLoginPage.getWebUsername().sendKeys(txtUsername);
 		log.debug("Set username");
 	}
 
 	// Enter password in password text box
 	public void setPassword(String txtPassword) {		
-		objLogin.getWebPassword().sendKeys(txtPassword);
+		objLoginPage.getWebPassword().sendKeys(txtPassword);
 		log.debug("Set password");
 	}
 
 	// Click Reset button
 	public void clickReset() {
-		objLogin.getWebReset().click();
+		objLoginPage.getWebReset().click();
 		log.debug("Click reset button");
 	}
 
 	// Click Login button
 	public void clickLogin() {
-		objLogin.getWebLogin().click();
+		objLoginPage.getWebLogin().click();
 		log.debug("Click login button");
 	}
 
 	// Click mouse in UserID text box
 	public void clickUserID() {
-		objLogin.getWebUsername().click();
+		objLoginPage.getWebUsername().click();
 		log.debug("Click mouse in user ID text box");
 	}
 
 	// Click mouse in Password text box
 	public void clickPassword() {
-		objLogin.getWebPassword().click();
+		objLoginPage.getWebPassword().click();
 		log.debug("Click mouse in password text box");
 	}
 
 	// Get the title of Login page
 	public String getLoginTitle() {		
 		log.debug("Get web title text");
-		return objLogin.getWebTitleText().getText();
+		return objLoginPage.getWebTitleText().getText();
 	}
 
 	// Get the alert text when leaving User ID text box blank
 	public String getUserIdAlert() {
 		log.debug("Get User ID alert");
-		return objLogin.getWebAlertUserID().getText();
+		return objLoginPage.getWebAlertUserID().getText();
 	}
 
 	// Get the alert text when leaving Password text box blank
 	public String getPasswordAlert() {
 		log.debug("Get password alert");
-		return objLogin.getWebAlertPassword().getText();
+		return objLoginPage.getWebAlertPassword().getText();
 	}
 
 	// Get the prompt popup when both leaving UserID and/or Password text box
@@ -93,30 +93,30 @@ public class LoginPageMethod {
 	// Get User ID in Login page
 	public String getUserID() {
 		log.debug("Get User ID");
-		return objLogin.getWebUsername().getText();
+		return objLoginPage.getWebUsername().getText();
 	}
 
 	// Get Password in Login page
 	public String getPassword() {
 		log.debug("Get password");
-		return objLogin.getWebPassword().getText();
+		return objLoginPage.getWebPassword().getText();
 	}
 
 	// Get Manager ID in Manager page
 	public String getManagerIDInManagerPage() {
 		log.debug("Get Manager ID in manager page");
-		return objLogin.getManagerID().getText();
+		return objLoginPage.getManagerID().getText();
 	}
 
 	public void loginToManagerPage(String username, String password) {
-		objLogin.getWebUsername().sendKeys(username);
-		objLogin.getWebPassword().sendKeys(password);
-		objLogin.getWebLogin().click();
+		objLoginPage.getWebUsername().sendKeys(username);
+		objLoginPage.getWebPassword().sendKeys(password);
+		objLoginPage.getWebLogin().click();
 		log.debug("Login to Manager page");
 	}
 
 	public void logout() {
-		objLogin.getWebLogOut().click();
+		objLoginPage.getWebLogOut().click();
 		log.debug("Click log out button");
 	}
 }

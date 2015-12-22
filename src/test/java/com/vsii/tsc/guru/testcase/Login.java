@@ -35,11 +35,6 @@ public class Login{
 	public void setupClass() throws NumberFormatException, IOException {
 		// create object of Login and Report
 		objLogin = new LoginPageMethod(TestBase.driver);
-
-		// Open test case file
-	//	Utility.openExcelFile(TestBase.p.getProperty("tcFile"), TestBase.p.getProperty("Login_Module"),
-		//		Integer.parseInt(TestBase.p.getProperty("tcID_Column")));
-
 	}
 
 	@Test(priority = 0, description = "Verify Title of Login Page")
