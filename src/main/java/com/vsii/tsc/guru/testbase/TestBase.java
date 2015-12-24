@@ -3,6 +3,7 @@ package com.vsii.tsc.guru.testbase;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Properties;
 
@@ -26,6 +27,7 @@ import com.vsii.tsc.guru.report.ExtentReporterNG;
 import com.vsii.tsc.guru.utility.DateTime;
 import com.vsii.tsc.guru.utility.DownloadUploadFile;
 import com.vsii.tsc.guru.utility.Utility;
+import com.vsii.tsc.gutu.model.TestCase;
 
 public class TestBase {
 	public static WebDriver driver;
@@ -37,12 +39,17 @@ public class TestBase {
 	public static String methodName;
 	public static String image;
 	public static String  imageName;
+	//trial
+	public static HashMap<String,List<String>> tcList;
 	
 	@BeforeSuite
 	public void setupSuite() throws IOException {
 		// Read config file
 		p = Utility.readConfig();
 		imageList = new ArrayList<String>();
+		
+		//trial
+		tcList = new HashMap<String,List<String>>();
 	
 		
 		if(p.getProperty("local").equals("No")){

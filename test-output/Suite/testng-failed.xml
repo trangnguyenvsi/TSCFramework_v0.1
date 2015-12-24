@@ -2,18 +2,35 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
   <listeners>
-    <listener class-name="com.vsii.tsc.guru.report.ExtentReportNGCapture"/>
     <listener class-name="com.vsii.tsc.guru.report.ExtentReporterNG"/>
   </listeners>
-  <test name="NewCustomer(failed)">
+  <test name="Login(failed)">
     <classes>
+      <class name="com.vsii.tsc.guru.testcase.Login">
+        <methods>
+          <include name="afterMethod"/>
+          <include name="teardownClass"/>
+          <include name="LO03"/>
+          <include name="setupClass"/>
+          <include name="LO02" invocation-numbers="3 4"/>
+        </methods>
+      </class> <!-- com.vsii.tsc.guru.testcase.Login -->
+      <class name="com.vsii.tsc.guru.testbase.TestBase">
+        <methods>
+          <include name="setupSuite"/>
+          <include name="teardownSuite"/>
+        </methods>
+      </class> <!-- com.vsii.tsc.guru.testbase.TestBase -->
       <class name="com.vsii.tsc.guru.testcase.NewCustomer">
         <methods>
-          <include name="CN02" invocation-numbers="0"/>
           <include name="afterMethod"/>
           <include name="setupClass"/>
         </methods>
       </class> <!-- com.vsii.tsc.guru.testcase.NewCustomer -->
+    </classes>
+  </test> <!-- Login(failed) -->
+  <test name="NewCustomer(failed)">
+    <classes>
       <class name="com.vsii.tsc.guru.testcase.Login">
         <methods>
           <include name="afterMethod"/>
@@ -21,6 +38,13 @@
           <include name="setupClass"/>
         </methods>
       </class> <!-- com.vsii.tsc.guru.testcase.Login -->
+      <class name="com.vsii.tsc.guru.testcase.NewCustomer">
+        <methods>
+          <include name="CN02"/>
+          <include name="afterMethod"/>
+          <include name="setupClass"/>
+        </methods>
+      </class> <!-- com.vsii.tsc.guru.testcase.NewCustomer -->
       <class name="com.vsii.tsc.guru.testbase.TestBase">
         <methods>
           <include name="setupSuite"/>

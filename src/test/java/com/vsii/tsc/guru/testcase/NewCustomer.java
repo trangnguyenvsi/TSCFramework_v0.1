@@ -46,9 +46,8 @@ public class NewCustomer{
 	
 	@Test(priority = 0)
 	public void CN01(){
-		//Get method name
-		class Local {};
-		TestBase.methodName = Local.class.getEnclosingMethod().getName();
+		//get method's name
+		TestBase.methodName = "CN01";
 		
 		objNewCust.gotoNewCustomerForm();
 		Assert.assertEquals(objNewCust.getTitleForm(),"Add New Customer");
@@ -56,9 +55,8 @@ public class NewCustomer{
 	
 	@Test(priority = 1, description = "Verify Add New Customer", dataProvider = "dpNewCustomer", dataProviderClass = TestData.class)
 	public void CN02(String name, String dob, String address, String city, String state, String pin,String mobileNumber, String email, String password, String message) throws Exception {
-		
-		class Local {};
-		TestBase.methodName = Local.class.getEnclosingMethod().getName();
+		//get method's name
+		TestBase.methodName = "CN02";
 			
 		//create new customer
 		objNewCust.createNewCustomer(name, dob, address, city, state, pin, mobileNumber, email, password);

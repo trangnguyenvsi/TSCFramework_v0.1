@@ -8,21 +8,21 @@ import com.vsii.tsc.guru.testcase.NewCustomer;
 import com.vsii.tsc.guru.utility.Utility;;
 
 public class TestData {
-	@DataProvider(name = "dpLogin_success")
+	@DataProvider(name = "Reset")
 	public static Object[][] getLoginValid() {
-		Object[][] loginData = Utility.getTable("./data/TestData.xlsx", "DataSet", "Login");
+		Object[][] loginData = Utility.getTable("./data/TestData.xlsx", "Login", "LO03");
 		return loginData;
 	}
 	
 	@DataProvider(name = "dpLogin")
 	public static Object[][] getLoginData() {
-		Object[][] loginData = Utility.getTable("./data/TestData.xlsx", "DataSet", "TC_01");
+		Object[][] loginData = Utility.getTable("./data/TestData.xlsx", "Login", "LO02");
 		return loginData;
 	}
 
 	@DataProvider(name = "dpNewCustomer")
 	public static Object[][] getCustomerData() {
-		Object[][] loginData = Utility.getTable("./data/TestData.xlsx", "Customer", "TC_02");
+		Object[][] loginData = Utility.getTable("./data/TestData.xlsx", "NewCustomer", "CN02");
 		return loginData;
 	}
 

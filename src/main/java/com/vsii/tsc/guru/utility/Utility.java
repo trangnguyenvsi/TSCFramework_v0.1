@@ -274,7 +274,7 @@ public static void createExcelFile(String fileName){
 }
 	
 /*
- * Read from excel column by search text
+ * Create hashmap
  */
 	public static HashMap<String,String> createHashMap(List<String> tcIDList, List<String> tcDescList){
 		testcaseList = new HashMap<String,String>();

@@ -34,6 +34,7 @@ import com.vsii.tsc.guru.testbase.TestBase;
 import com.vsii.tsc.guru.utility.CommonOperations;
 import com.vsii.tsc.guru.utility.DateTime;
 import com.vsii.tsc.guru.utility.Utility;
+import com.vsii.tsc.gutu.model.TestCase;
 
 public class ExtentReporterNG implements IReporter {
 	static Properties p;
@@ -43,31 +44,41 @@ public class ExtentReporterNG implements IReporter {
 	static String imageName;
 	static String method;
 
-
-	// WebDriver driver=null;
-	String filePath = "D:/MyJobs/RemarkMedia/Build_Project_for_TSC/NewSelenium/report/screenshot/";
+	public TestCase testcase;
+	public List<TestCase> tcList;
 
 	// Write test results
+	@SuppressWarnings("deprecation")
 	@Override
-	public void generateReport(List<XmlSuite> xmlSuites, List<ISuite> suites, String outputDirectory) {		
-		extent = new ExtentReports("D:/MyJobs/RemarkMedia/Build_Project_for_TSC/NewSelenium/report/Extent.html", false);
-		extent.config().documentTitle("Guru Test Report");
+	public void generateReport(List<XmlSuite> xmlSuites, List<ISuite> suites, String outputDirectory) {
+		extent = new ExtentReports(TestBase.p.getProperty("reportPath"), false);
 
 		for (ISuite suite : suites) {
 			Map<String, ISuiteResult> result = suite.getResults();
 
 			for (ISuiteResult r : result.values()) {
 				ITestContext context = r.getTestContext();
-				
-				//Open excel file with the sheet name is the test name in testng.xml
+
+				// Open excel file with the sheet name is the test name in testng.xml
 				try {
 					Utility.openExcelFile(TestBase.p.getProperty("tcFile"), context.getName(),
-							Integer.parseInt(TestBase.p.getProperty("tcIDCol")),Integer.parseInt(TestBase.p.getProperty("tcDescCol")),Integer.parseInt(TestBase.p.getProperty("tcStepCol")));
-					
-					 System.out.println(TestBase.p.getProperty("tcIDCol"));
-					 System.out.println(TestBase.p.getProperty("tcDescCol"));
-					 System.out.println(TestBase.p.getProperty("tcStepCol"));
-					 
+							Integer.parseInt(TestBase.p.getProperty("tcIDCol")),
+							Integer.parseInt(TestBase.p.getProperty("tcDescCol")),
+							Integer.parseInt(TestBase.p.getProperty("tcStepCol")));
+
+					tcList = new ArrayList<TestCase>();
+					for (String id : Utility.tcIDList) {
+						int index = Utility.tcIDList.indexOf(id);
+						if (TestBase.tcList.containsKey(id)) {
+							testcase = new TestCase();
+							testcase.setTcID(id);
+							testcase.setTcDesc(Utility.tcDescList.get(index));
+							testcase.setTcStep(Utility.tcStepList.get(index));
+							testcase.setTcImage(TestBase.tcList.get(id));
+							tcList.add(testcase);
+						}
+					}
+
 				} catch (NumberFormatException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -75,88 +86,81 @@ public class ExtentReporterNG implements IReporter {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
-				
-					try {
-						buildTestNodes(context.getPassedTests(), LogStatus.PASS);
-						buildTestNodes(context.getFailedTests(), LogStatus.FAIL);
-						buildTestNodes(context.getSkippedTests(), LogStatus.SKIP);
-					
-					} catch (IOException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-					//Create test result file for each test
-					Utility.createExcelFile(TestBase.p.getProperty("resultpath")+"Guru_TestCase_"+context.getName()+".xlsx");
+				try {
+					buildTestNodes(context.getPassedTests(), LogStatus.PASS);
+					buildTestNodes(context.getFailedTests(), LogStatus.FAIL);
+					buildTestNodes(context.getSkippedTests(), LogStatus.SKIP);
+
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				// Create test result file for each test
+				Utility.createExcelFile(TestBase.p.getProperty("resultpath") + context.getName() + ".xlsx");
 			}
-			
+
 		}
 
 		extent.flush();
 		extent.close();
-
 		TestBase.driver.quit();
 	}
 
-	private static void buildTestNodes(IResultMap tests, LogStatus status) throws IOException {
-		
-		
-		
-		ExtentTest test;		
+	private void buildTestNodes(IResultMap tests, LogStatus status) throws IOException {
+
+		ExtentTest test;
 		if (tests.size() > 0) {
-			
+
 			for (ITestResult result : tests.getAllResults()) {
+				//Get Method name
 				method = result.getMethod().getMethodName();
+				//Start test
 				test = extent.startTest(result.getMethod().getMethodName());
 				for (String group : result.getMethod().getGroups())
 					test.assignCategory(group);
-
+				//Create test message
 				String message = "Test " + status.toString().toLowerCase() + "ed";
-
 				if (result.getThrowable() != null)
 					message = result.getThrowable().getMessage();
-				if(status.toString().equals("pass")){
-					System.out.println("test status:"+status.toString());
+				
+				//Write test results to excel file
+				if (status.toString().equals("pass")) {
 					Utility.writeTestResults(method, 5, "Passed");
-				}
-				else if (status.toString().equals("fail")){
+				} else if (status.toString().equals("fail")) {
 					Utility.writeTestResults(ExtentReporterNG.method, 5, "Failed");
+				}
+
+				// Write description, 
+				for (TestCase tc : tcList) {
+					System.out.println("Size of Test Case List" + tcList.size());
+					if (tc.getTcID().equals(method)) {
+						test.log(LogStatus.INFO, tc.getTcDesc());
+						test.log(LogStatus.INFO, tc.getTcStep());
+						for (String image : tc.getTcImage()) {
+							String imageTestCase = null;
+							imageTestCase = image.substring(0, image.indexOf("_"));
+							System.out.println("Image:" + imageTestCase);
+							//Add image to report
+							if (imageTestCase.equals(method)) {
+								test.log(LogStatus.INFO,
+										test.addScreenCapture(p.getProperty("imagePath") + image + ".jpg"));
+								TestBase.imageList.remove(image);
+								break;
+							}
+
+						}
+						break;
+					}
 				}
 
 				// Write status to report
 				test.log(status, message);
-				
-				// Add image to report
-				for (String image : TestBase.imageList) {
-					
-					String imageTestCase = image.substring(0,4);
-					//Get exactly image name by cut timestamp
-//					String[] imageText = image.split("_");
-//					for (String s : imageText) {
-//						imageTestCase = s.substring(0, s.indexOf("_")+1);
-//						System.out.println("Image:"+imageTestCase);
-//					}
-					
-						if (imageTestCase.equals(method)) {
-							test.log(LogStatus.INFO, test.addScreenCapture(p.getProperty("imagePath") + image + ".jpg"));
-							TestBase.imageList.remove(image);	
-							break;
-						} 
-						
-					}
-				 	Iterator it = Utility.createHashMap(Utility.tcIDList, Utility.tcDescList).entrySet().iterator();
-				    while (it.hasNext()) {
-				        Map.Entry pair = (Map.Entry)it.next();
-				        if(pair.getKey().equals(method)){
-				        	test.log(LogStatus.INFO,(Throwable) pair.getValue());
-				        }
-				    	break;
-				    }
-				
+
 				extent.endTest(test);
-				
+
 			}
 		}
-		
+
 	}
 
 	public static String CaptureScreen(WebDriver driver, String captureName) throws IOException {

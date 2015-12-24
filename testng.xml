@@ -2,7 +2,6 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite">
 <listeners>
-		<listener class-name="com.vsii.tsc.guru.report.ExtentReportNGCapture" />
         <listener class-name="com.vsii.tsc.guru.report.ExtentReporterNG"/> 
 </listeners>
   <test name="Login" preserve-order="true">
