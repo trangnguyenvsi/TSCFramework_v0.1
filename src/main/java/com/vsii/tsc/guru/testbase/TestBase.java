@@ -24,11 +24,11 @@ import org.testng.annotations.BeforeTest;
 
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
+import com.vsii.tsc.guru.model.TestCase;
 import com.vsii.tsc.guru.report.ExtentReporterNG;
 import com.vsii.tsc.guru.utility.DateTime;
 import com.vsii.tsc.guru.utility.DownloadUploadFile;
 import com.vsii.tsc.guru.utility.Utility;
-import com.vsii.tsc.gutu.model.TestCase;
 
 public class TestBase {
 	public static WebDriver driver;
