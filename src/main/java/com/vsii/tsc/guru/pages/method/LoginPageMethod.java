@@ -6,10 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
 import com.relevantcodes.extentreports.ExtentReports;
-import com.relevantcodes.extentreports.LogStatus;
 import com.vsii.tsc.guru.pages.LoginPage;
-import com.vsii.tsc.guru.report.ExtentReporterNG;
-import com.vsii.tsc.guru.testbase.TestBase;
 
 public class LoginPageMethod {	
 	ExtentReports extent;
