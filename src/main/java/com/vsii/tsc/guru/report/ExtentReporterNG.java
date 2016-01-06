@@ -28,9 +28,9 @@ import org.testng.xml.XmlSuite;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
+import com.vsii.tsc.guru.model.TestCase;
 import com.vsii.tsc.guru.testbase.TestBase;
 import com.vsii.tsc.guru.utility.Utility;
-import com.vsii.tsc.gutu.model.TestCase;
 
 public class ExtentReporterNG implements IReporter {
 	static Properties p;
