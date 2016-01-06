@@ -7,7 +7,6 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
@@ -23,7 +22,6 @@ import org.testng.IResultMap;
 import org.testng.ISuite;
 import org.testng.ISuiteResult;
 import org.testng.ITestContext;
-import org.testng.ITestNGMethod;
 import org.testng.ITestResult;
 import org.testng.xml.XmlSuite;
 
@@ -31,8 +29,6 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 import com.vsii.tsc.guru.testbase.TestBase;
-import com.vsii.tsc.guru.utility.CommonOperations;
-import com.vsii.tsc.guru.utility.DateTime;
 import com.vsii.tsc.guru.utility.Utility;
 import com.vsii.tsc.gutu.model.TestCase;
 
@@ -51,7 +47,6 @@ public class ExtentReporterNG implements IReporter {
 
 
 	// Write test results
-	@SuppressWarnings("deprecation")
 	@Override
 	public void generateReport(List<XmlSuite> xmlSuites, List<ISuite> suites, String outputDirectory) {
 		extent = new ExtentReports(TestBase.p.getProperty("reportPath"), false);
