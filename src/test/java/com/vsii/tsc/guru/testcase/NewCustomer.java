@@ -44,7 +44,7 @@ public class NewCustomer{
 		login();
 	}
 	
-	@Test(priority = 0)
+	@Test(priority = 0, description="Verify New Customer link")
 	public void CN01(){
 		//get method's name
 		TestBase.methodName = "CN01";
@@ -53,10 +53,19 @@ public class NewCustomer{
 		Assert.assertEquals(objNewCust.getTitleForm(),"Add New Customer");
 	}
 	
-	@Test(priority = 1, description = "Verify Add New Customer", dataProvider = "dpNewCustomer", dataProviderClass = TestData.class)
-	public void CN02(String name, String dob, String address, String city, String state, String pin,String mobileNumber, String email, String password, String message) throws Exception {
+	@Test(priority=1, description="Validate Create New Customer form", dataProvider="dpValidateCustomer",dataProviderClass = TestData.class)
+	public void CN02(String message){
 		//get method's name
 		TestBase.methodName = "CN02";
+		objNewCust.clickToEachField();
+		Assert.assertTrue(TestBase.driver.getPageSource().contains(message));
+	
+	}
+	
+	@Test(priority = 2, description = "Verify Add New Customer", dataProvider = "dpNewCustomer", dataProviderClass = TestData.class)
+	public void CN03(String name, String dob, String address, String city, String state, String pin,String mobileNumber, String email, String password, String message) throws Exception {
+		//get method's name
+		TestBase.methodName = "CN03";
 			
 		//create new customer
 		objNewCust.createNewCustomer(name, dob, address, city, state, pin, mobileNumber, email, password);

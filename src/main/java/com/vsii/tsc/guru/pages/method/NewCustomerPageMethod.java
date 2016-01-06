@@ -52,4 +52,16 @@ public class NewCustomerPageMethod {
 	public void gotoNewCustomerForm(){
 		objNewCust.getWebNewCustomer().click();
 	}
+	
+	public void clickToEachField(){
+		objNewCust.getWebCustomerName().click();
+		objNewCust.getWebDob().click();
+		objNewCust.getWebAddress().click();
+		objNewCust.getWebCity().click();
+		objNewCust.getWebCity().click();
+		objNewCust.getWebState().click();
+		objNewCust.getWebPhoneNo().click();
+		objNewCust.getWebEmail().click();
+		objNewCust.getWebPassword().click();
+	}
 }

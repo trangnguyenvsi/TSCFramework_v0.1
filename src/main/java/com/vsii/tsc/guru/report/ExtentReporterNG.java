@@ -46,13 +46,16 @@ public class ExtentReporterNG implements IReporter {
 
 	public TestCase testcase;
 	public List<TestCase> tcList;
+	
+	// static ExtentTest test;
+
 
 	// Write test results
 	@SuppressWarnings("deprecation")
 	@Override
 	public void generateReport(List<XmlSuite> xmlSuites, List<ISuite> suites, String outputDirectory) {
 		extent = new ExtentReports(TestBase.p.getProperty("reportPath"), false);
-
+		
 		for (ISuite suite : suites) {
 			Map<String, ISuiteResult> result = suite.getResults();
 
@@ -65,7 +68,7 @@ public class ExtentReporterNG implements IReporter {
 							Integer.parseInt(TestBase.p.getProperty("tcIDCol")),
 							Integer.parseInt(TestBase.p.getProperty("tcDescCol")),
 							Integer.parseInt(TestBase.p.getProperty("tcStepCol")));
-
+					//Find test case ID in tcIDList and tcList  
 					tcList = new ArrayList<TestCase>();
 					for (String id : Utility.tcIDList) {
 						int index = Utility.tcIDList.indexOf(id);
@@ -152,7 +155,7 @@ public class ExtentReporterNG implements IReporter {
 						break;
 					}
 				}
-
+				
 				// Write status to report
 				test.log(status, message);
 

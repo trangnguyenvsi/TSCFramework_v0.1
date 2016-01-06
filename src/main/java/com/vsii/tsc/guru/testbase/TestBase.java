@@ -15,6 +15,7 @@ import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.LocalFileDetector;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.testng.annotations.AfterSuite;
@@ -42,8 +43,14 @@ public class TestBase {
 	//trial
 	public static HashMap<String,List<String>> tcList;
 	
+	public RemoteWebDriver remoteDriver;
+	
 	@BeforeSuite
 	public void setupSuite() throws IOException {
+		
+		//trial
+		//TestBase.getExtentReport();
+
 		// Read config file
 		p = Utility.readConfig();
 		imageList = new ArrayList<String>();
@@ -59,9 +66,11 @@ public class TestBase {
 			caps.setCapability("platform", "Windows 7");
 			caps.setCapability("version", "42.0");
 			caps.setCapability("name", "Guru Test 01");
-			caps.setCapability("screenResolution", "800x600");
-			this.driver = new RemoteWebDriver(
-								new URL("http://trangnguyen:7d3c3bec-6461-4901-bb91-02607b5ac51a@ondemand.saucelabs.com:80/wd/hub"),caps);
+			caps.setCapability("screenResolution", "1280x1024");
+		
+			driver = new RemoteWebDriver(
+								new URL("http://trangntt86:82eb2d76-3286-4d62-8a13-431eac3a552c@ondemand.saucelabs.com:80/wd/hub"),caps);
+			//((RemoteWebDriver) driver).setFileDetector(new LocalFileDetector());
 		}
 		else{
 			switch (p.getProperty("browserName")) {

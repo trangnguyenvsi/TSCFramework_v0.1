@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.Properties;
 
 import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.IndexedColors;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFCellStyle;
@@ -23,29 +24,29 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class Utility {
-	
+
 	static FileInputStream file;
 	static XSSFWorkbook workbook;
 	static XSSFSheet sheet;
 	static XSSFRow row;
 	static Cell cell;
-//	public static int tcIDCol;
-//	public static int tcDescCol;
-//	public static int tcStepCol;
-	
-	//Use for getTable() method
-//	static String testData[][];
-	
-	//Use for writeTestResults() method
+	// public static int tcIDCol;
+	// public static int tcDescCol;
+	// public static int tcStepCol;
+
+	// Use for getTable() method
+	// static String testData[][];
+
+	// Use for writeTestResults() method
 	public static ArrayList<String> tcIDList;
 	public static ArrayList<String> tcDescList;
 	public static ArrayList<String> tcStepList;
-	public static HashMap<String,String> testcaseList;
-	
-//--------------------------------------------------Methods--------------------------------------------------------------------
-/*
- * Read from configuration file
- */
+	public static HashMap<String, String> testcaseList;
+
+	// --------------------------------------------------Methods--------------------------------------------------------------------
+	/*
+	 * Read from configuration file
+	 */
 	public static Properties readConfig() throws IOException {
 		// Create new properties variable
 		Properties p = new Properties();
@@ -55,22 +56,23 @@ public class Utility {
 		p.load(stream);
 		return p;
 	}
-//-----------------------------------------------------------------------------------------------------------------------------
-/*
- * Read data from table in excel file
- */
+
+	// -----------------------------------------------------------------------------------------------------------------------------
+	/*
+	 * Read data from table in excel file
+	 */
 	@SuppressWarnings("resource")
 	public static String[][] getTable(String filePath, String sheetName, String tableName) {
-		
+
 		FileInputStream fileTable = null;
 		XSSFWorkbook workbookTable = null;
 		XSSFSheet sheetTable;
 		XSSFRow rowTable;
 		Cell cellTable;
-		
-		//Use for getTable() method
+
+		// Use for getTable() method
 		String testData[][];
-		
+
 		String tagName = null;
 		List<Cell> tagList = new ArrayList<Cell>();
 		int startRow = 0;
@@ -144,78 +146,80 @@ public class Utility {
 		return testData;
 	}
 
-//------------------------------------------------------------------------------------------------------------------------------
-/*
- * Get value list on the column
- */
+	// ------------------------------------------------------------------------------------------------------------------------------
+	/*
+	 * Get value list on the column
+	 */
 	@SuppressWarnings("resource")
-	public static List<String> loadCellValueList(String sheetName,int tcIDCol) {
+	public static List<String> loadCellValueList(String sheetName, int tcIDCol) {
 
 		List<String> cellValueList = new ArrayList<String>();
 		int columnWanted;
 
-		//List<ActionModel> actionList = new ArrayList<ActionModel>();
-		
+		// List<ActionModel> actionList = new ArrayList<ActionModel>();
+
 		// Define workbook
-		/*try {
-			workbook = new XSSFWorkbook(file);
-			System.out.println("successfully");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			System.out.println("unsuccessfully");
-		}*/
+		/*
+		 * try { workbook = new XSSFWorkbook(file);
+		 * System.out.println("successfully"); } catch (IOException e) { // TODO
+		 * Auto-generated catch block e.printStackTrace();
+		 * System.out.println("unsuccessfully"); }
+		 */
 		// define sheet
 		sheet = workbook.getSheet(sheetName);
 
 		// Col is Test Case ID's column
 		columnWanted = tcIDCol;
-		for (int r = 13;r<sheet.getLastRowNum(); r++) {
-		  Cell c = null;	
-		  Row row1 = sheet.getRow(r);
-		  c = row1.getCell(columnWanted);
-		   if (c == null || c.getCellType() == Cell.CELL_TYPE_BLANK) {
-		      // Nothing in the cell in this row, skip it
-		   } else cellValueList.add(c.getStringCellValue());
+		for (int r = 12; r < sheet.getLastRowNum(); r++) {
+			Cell c = null;
+			Row row1 = sheet.getRow(r);
+			c = row1.getCell(columnWanted);
+			if (c == null || c.getCellType() == Cell.CELL_TYPE_BLANK) {
+				// Nothing in the cell in this row, skip it
+			} else
+				cellValueList.add(c.getStringCellValue());
 		}
 		// for (String s:caseNameList){
 		// System.out.println(s+",");
 		// }
 
 		// Get table for all Suites
-		
+
 		return cellValueList;
-	
+
 	}
-	
-//-------------------------------------------------------------------------------------------------------------------------------
-/*
- * Open excel file
- */
-		public static void openExcelFile(String filePath, String sheetName,int tcIDCol,int tcDescCol,int tcStepCol) throws IOException{
+
+	// -------------------------------------------------------------------------------------------------------------------------------
+	/*
+	 * Open excel file
+	 */
+	public static void openExcelFile(String filePath, String sheetName, int tcIDCol, int tcDescCol, int tcStepCol)
+			throws IOException {
 		file = new FileInputStream(new File(filePath));
-        workbook = new XSSFWorkbook(file);
-    
-        //create a new work sheet
-        sheet = workbook.getSheet(sheetName);
-        
-        //list of test case name
-        tcIDList= (ArrayList<String>) Utility.loadCellValueList(sheetName, tcIDCol);
-        tcDescList= (ArrayList<String>) Utility.loadCellValueList(sheetName, tcDescCol);
-        tcStepList= (ArrayList<String>) Utility.loadCellValueList(sheetName, tcStepCol);
-		
-}
-//-------------------------------------------------------------------------------------------------------------------------------
-/*
- * Write results to excel
- */
-	public static void writeTestResults(String caseName, int writtenCol, String testResult) throws IOException{
+		workbook = new XSSFWorkbook(file);
+
+		// create a new work sheet
+		sheet = workbook.getSheet(sheetName);
+
+		// list of test case name
+		tcIDList = (ArrayList<String>) Utility.loadCellValueList(sheetName, tcIDCol);
+		tcDescList = (ArrayList<String>) Utility.loadCellValueList(sheetName, tcDescCol);
+		tcStepList = (ArrayList<String>) Utility.loadCellValueList(sheetName, tcStepCol);
+
+	}
+
+	// -------------------------------------------------------------------------------------------------------------------------------
+	/*
+	 * Write results to excel
+	 */
+	public static void writeTestResults(String caseName, int writtenCol, String testResult) throws IOException {
 		String cellColor = "";
-	
-		for (String cellContent:tcIDList){
-				//If find the test case ID equal to the name of test method, fill the test results.
-			if(cellContent.equalsIgnoreCase(caseName)){
-					System.out.println(cellContent);
+
+		for (String cellContent : tcIDList) {
+			// If find the test case ID equal to the name of test method, fill
+			// the test results.
+			if (cellContent.equalsIgnoreCase(caseName)) {
+				System.out.println(cellContent);
 				int rowNum;
 				int colNum;
 				int newColNum;
@@ -223,67 +227,69 @@ public class Utility {
 					for (Cell cell : row) {
 						if (cell.getCellType() == Cell.CELL_TYPE_STRING) {
 							if (cell.getRichStringCellValue().getString().trim().equals(cellContent)) {
-		                	// cell.setCellValue("Passed");
+								// cell.setCellValue("Passed");
 								rowNum = row.getRowNum();
 								colNum = cell.getColumnIndex();
-								newColNum = colNum+writtenCol;
-									
-												
-								//Change cell color
+								newColNum = colNum + writtenCol;
+
+								// Change cell color
 								/* Get access to XSSFCellStyle */
-				                XSSFCellStyle my_style = workbook.createCellStyle();
-				                /* We will now specify a background cell color */
-				                 my_style.setFillPattern(XSSFCellStyle.ALIGN_CENTER);
-				                 XSSFColor backgroundColor = null;
-				                
-				                if(testResult.equals("Passed"))
-				                {
-				                	backgroundColor=new XSSFColor(Color.GREEN);
-				                }
-				                else if (testResult.endsWith("Failed")){
-				                	backgroundColor=new XSSFColor(Color.RED);
-				                }
-		                	
-				                my_style.setFillBackgroundColor(backgroundColor);	
-				                sheet.getRow(rowNum).getCell(newColNum).setCellStyle(my_style);
-				                sheet.getRow(rowNum).getCell(newColNum).setCellValue(testResult);
+								XSSFCellStyle myStyle = workbook.createCellStyle();
+								/*
+								 * We will now specify a background cell color
+								 */
+
+								myStyle.setFillPattern(CellStyle.SOLID_FOREGROUND);
+								myStyle.setBorderTop((short)1);
+								myStyle.setBorderBottom((short)1);
+								myStyle.setBorderLeft((short)1);
+								myStyle.setBorderRight((short)1);
+
+								if (testResult.equals("Passed")) {
+									myStyle.setFillForegroundColor(IndexedColors.GREEN.getIndex());
+								} else if (testResult.endsWith("Failed")) {
+									myStyle.setFillForegroundColor(IndexedColors.RED.getIndex());
+								}
+
+								sheet.getRow(rowNum).getCell(newColNum).setCellStyle(myStyle);
+								sheet.getRow(rowNum).getCell(newColNum).setCellValue(testResult);
 							}
 						}
 					}
 				}
-		    }  
+			}
 		}
-		 
-	}
-//-----------------------------------------------------------------------------------------------------------------------------
-/*
- * Create excel file
- */
-public static void createExcelFile(String fileName){
-	try {
-        FileOutputStream out =new FileOutputStream(new File(fileName));
-        workbook.write(out);
-        out.close();
-        System.out.println("Excel written successfully..");
 
-    } catch (FileNotFoundException e) {
-        e.printStackTrace();
-    } catch (IOException e) {
-        e.printStackTrace();
-    }
-}
-	
-/*
- * Create hashmap
- */
-	public static HashMap<String,String> createHashMap(List<String> tcIDList, List<String> tcDescList){
-		testcaseList = new HashMap<String,String>();
-		for(int i =0; i<tcIDList.size();i++)
-		{
+	}
+
+	// -----------------------------------------------------------------------------------------------------------------------------
+	/*
+	 * Create excel file
+	 */
+	public static void createExcelFile(String fileName) {
+		try {
+			FileOutputStream out = new FileOutputStream(new File(fileName));
+			workbook.write(out);
+			out.close();
+			System.out.println("Excel written successfully..");
+
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	/*
+	 * Create hashmap
+	 */
+	public static HashMap<String, String> createHashMap(List<String> tcIDList, List<String> tcDescList) {
+		testcaseList = new HashMap<String, String>();
+		for (int i = 0; i < tcIDList.size(); i++) {
 			testcaseList.put(tcIDList.get(i), tcDescList.get(i));
-			System.out.println(tcIDList.get(i)+"|"+tcDescList.get(i));
+			System.out.println(tcIDList.get(i) + "|" + tcDescList.get(i));
 		}
 		return testcaseList;
-		
+
 	}
 }

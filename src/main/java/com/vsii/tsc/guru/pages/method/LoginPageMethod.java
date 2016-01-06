@@ -5,10 +5,18 @@ import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.LogStatus;
 import com.vsii.tsc.guru.pages.LoginPage;
+import com.vsii.tsc.guru.report.ExtentReporterNG;
+import com.vsii.tsc.guru.testbase.TestBase;
 
 public class LoginPageMethod {	
+	ExtentReports extent;
+	
 	Logger log = Logger.getLogger("trunghung");
+	
+	
 	// Create new Web Driver variable
 	WebDriver driver;
 	// Create new WebElementLogin object
@@ -109,9 +117,15 @@ public class LoginPageMethod {
 	}
 
 	public void loginToManagerPage(String username, String password) {
+	
 		objLoginPage.getWebUsername().sendKeys(username);
+	//	ExtentReporterNG.test.log(LogStatus.INFO, "Input user name");
+		
 		objLoginPage.getWebPassword().sendKeys(password);
+	//	ExtentReporterNG.test.log(LogStatus.INFO, "Input password");
+		
 		objLoginPage.getWebLogin().click();
+	//	ExtentReporterNG.test.log(LogStatus.INFO, "Click Login");
 		log.debug("Login to Manager page");
 	}
 
