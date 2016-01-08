@@ -4,12 +4,12 @@
 <listeners>
         <listener class-name="com.vsii.tsc.guru.report.ExtentReporterNG"/> 
 </listeners>
-  <test name="Login" preserve-order="true">
-    <classes>
-      <class name="com.vsii.tsc.guru.testbase.TestBase"/>
-      <class name="com.vsii.tsc.guru.testcase.Login"/>
-    </classes>
-    </test>
+<!--   <test name="Login" preserve-order="true"> -->
+<!--     <classes> -->
+<!--       <class name="com.vsii.tsc.guru.testbase.TestBase"/> -->
+<!--       <class name="com.vsii.tsc.guru.testcase.Login"/> -->
+<!--     </classes> -->
+<!--     </test> -->
 <!--     <test name="CreateNewCustomer" preserve-order="true"> -->
 <!--     <classes> -->
 <!--     	<class name="com.vsii.tsc.guru.testbase.TestBase"/> -->
@@ -17,15 +17,15 @@
 <!--       	<class name="com.vsii.tsc.guru.testcase.NewCustomer"/> -->
 <!--     </classes> -->
 <!--     </test> -->
-<!--         <test name="EditCustomer" preserve-order="true"> -->
-<!--     <classes> -->
-<!--     	<class name="com.vsii.tsc.guru.testbase.TestBase"/> -->
+        <test name="EditCustomer" preserve-order="true">
+    <classes>
+    	<class name="com.vsii.tsc.guru.testbase.TestBase"/>
 <!--       	<class name="com.vsii.tsc.guru.data.TestDataFactory"/> -->
 <!--       	<class name="com.vsii.tsc.guru.testcase.EditCustomer"/> -->
-<!--       	<class name="com.vsii.tsc.guru.testcase.DeleteCustomer"/>  -->
+      	<class name="com.vsii.tsc.guru.testcase.DeleteCustomer"/> 
 <!--         <class name="com.vsii.tsc.guru.testcase.TestDownloadUpload"/>  -->
-<!--     </classes> -->
-<!--     </test> -->
+    </classes>
+    </test>
 <!-- <test name="Login" preserve-order="true"> -->
 <!--     <classes> -->
 <!--       <class name="com.vsii.tsc.guru.testbase.TestBase"/> -->
