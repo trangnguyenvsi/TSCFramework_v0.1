@@ -49,7 +49,7 @@ public class Login{
 	 * Create test script for TC_01
 	 */
 
-	@Test(priority = 1, description = "verify Login", dataProvider = "dpLogin", dataProviderClass = TestData.class)
+	@Test(priority = 2, description = "verify Login", dataProvider = "dpLogin", dataProviderClass = TestData.class)
 	public void LO02(String username, String password, String message) throws Exception {
 
 		//get method's name
@@ -71,11 +71,12 @@ public class Login{
 
 	}
 	
-	 @Test(priority = 2, description = "verify_Reset_Button")
+	 @Test(priority = 1, description = "verify_Reset_Button", dataProvider = "dpReset", dataProviderClass = TestData.class)
 	 public void LO03(String username, String password) throws Exception {
 		//get method's name
 		TestBase.methodName = "LO03";
-		objLogin.loginToManagerPage(username, password);
+		objLogin.setUserID(username);
+		objLogin.setPassword(password);
 		objLogin.clickReset();
 		Assert.assertEquals(objLogin.getUserID(), "");
 		Assert.assertEquals(objLogin.getPassword(), "");

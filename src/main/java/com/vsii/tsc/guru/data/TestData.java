@@ -8,7 +8,7 @@ import com.vsii.tsc.guru.testcase.NewCustomer;
 import com.vsii.tsc.guru.utility.Utility;;
 
 public class TestData {
-	@DataProvider(name = "Reset")
+	@DataProvider(name = "dpReset")
 	public static Object[][] getLoginValid() {
 		Object[][] data = Utility.getTable("./data/TestData.xlsx", "Login", "LO03");
 		return data;
@@ -32,11 +32,11 @@ public class TestData {
 		return data;
 	}
 
-	@DataProvider(name = "dpEditCustomer")
-	public static Object[][] editCustomerData() {
-		Object[][] data = Utility.getTable("./data/TestData.xlsx", "EditCustomer", "ED03");
-		return data;
-	}
+//	@DataProvider(name = "dpEditCustomer")
+//	public static Object[][] editCustomerData() {
+//		Object[][] data = Utility.getTable("./data/TestData.xlsx", "EditCustomer", "ED03");
+//		return data;
+//	}
 	
 	
 }

@@ -50,28 +50,22 @@ public class EditCustomer {
 		login();
 	}
 
-	//@Test(priority = 1, description = "Edit Customer")
+	@Test(priority = 1, description = "Edit Customer")
 	public void ED01() throws IOException {
 		// Method name
 		TestBase.methodName = "ED01";
 
 		// Perform test steps
 		objEditCust.clickEditCustomer();
-		objEditCust.enterCustomerID("93390");
+		objEditCust.enterCustomerID("86067");
 		objEditCust.clickSubmit();
 
 		// Verify Expected Results
 		String custNameLabel = objEditCust.getCustomerNameLabel();
+		//Verify Label Name
 		Assert.assertTrue(custNameLabel.contains("Customer Name"));
-	}
-
-	//@Test(priority = 2, description = "Check for disabled textbox")
-	public void ED02() throws IOException {
-		// Method name
-		TestBase.methodName = "ED02";
-
+		//Verify Textbox is disabled
 		boolean isDisabled = objEditCust.checkTextBoxDisabled();
-		// Verify that textbox is disable
 		Assert.assertTrue(isDisabled);
 	}
 
