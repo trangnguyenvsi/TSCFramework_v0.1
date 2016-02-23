@@ -8,12 +8,10 @@ import java.sql.Statement;
 import java.util.Properties;
 
 public class DBConnection {
-static Properties p;
-//	static Statement stmt;
-	
+static Properties p;	
 	public static ResultSet connectSQLServer(String sqlCommandName) throws IOException{
 		
-		p = new Utility().readConfig();
+		p = CommonOperations.readConfig();
 		Connection conn = null;
 		ResultSet rs = null;
 		Statement stmt = null;
@@ -25,7 +23,7 @@ static Properties p;
 		String user = p.getProperty("SQLServer_user");
 		String pwd = p.getProperty("SQLServer_pwd");
 		
-		//Defind sql command
+		//Define sql command
 		sqlCommand = p.getProperty(sqlCommandName);
 		
 		//Driver of SQLServer
@@ -53,7 +51,7 @@ static Properties p;
 	}
 public static ResultSet connectMySQL(String sqlCommandName) throws IOException{
 		
-	 p = Utility.readConfig();
+	 p = CommonOperations.readConfig();
 	/*Connection is an interface which helps you establish connection with database.*/
 	Connection conn = null;
 	ResultSet rs = null;
