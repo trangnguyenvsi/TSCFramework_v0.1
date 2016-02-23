@@ -1,22 +1,11 @@
-package com.vsii.tsc.guru.report;
+package com.vsii.tsc.guru.utility;
 
-import java.awt.Rectangle;
-import java.awt.Robot;
-import java.awt.Toolkit;
-import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 
-import javax.imageio.ImageIO;
-
-import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
 import org.testng.IReporter;
 import org.testng.IResultMap;
 import org.testng.ISuite;
@@ -30,48 +19,45 @@ import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 import com.vsii.tsc.guru.model.TestCase;
 import com.vsii.tsc.guru.testbase.TestBase;
-import com.vsii.tsc.guru.utility.Utility;
+import com.vsii.tsc.guru.utility.ExcelHandle;
 
 public class ExtentReporterNG implements IReporter {
 	static Properties p;
 	public static ExtentReports extent;
 	public ITestResult result;
-	static String imagePath;
-	static String imageName;
 	static String method;
 
 	public TestCase testcase;
 	public List<TestCase> tcList;
-	
-	// static ExtentTest test;
 
-
-	// Write test results
+	// Write test results into test report
 	@Override
 	public void generateReport(List<XmlSuite> xmlSuites, List<ISuite> suites, String outputDirectory) {
 		extent = new ExtentReports(TestBase.p.getProperty("reportPath"), false);
-		
+
 		for (ISuite suite : suites) {
 			Map<String, ISuiteResult> result = suite.getResults();
 
 			for (ISuiteResult r : result.values()) {
 				ITestContext context = r.getTestContext();
 
-				// Open excel file with the sheet name is the test name in testng.xml
+				// Open excel file with the sheet name is the test name in
+				// testng.xml
 				try {
-					Utility.openExcelFile(TestBase.p.getProperty("tcFile"), context.getName(),
+					ExcelHandle.openExcelFile(TestBase.p.getProperty("tcFile"), context.getName(),
 							Integer.parseInt(TestBase.p.getProperty("tcIDCol")),
 							Integer.parseInt(TestBase.p.getProperty("tcDescCol")),
 							Integer.parseInt(TestBase.p.getProperty("tcStepCol")));
-					//Find test case ID in tcIDList and tcList  
+					// Find test case ID in tcIDList and tcList
 					tcList = new ArrayList<TestCase>();
-					for (String id : Utility.tcIDList) {
-						int index = Utility.tcIDList.indexOf(id);
+					// Create test case List
+					for (String id : ExcelHandle.tcIDList) {
+						int index = ExcelHandle.tcIDList.indexOf(id);
 						if (TestBase.tcList.containsKey(id)) {
 							testcase = new TestCase();
 							testcase.setTcID(id);
-							testcase.setTcDesc(Utility.tcDescList.get(index));
-							testcase.setTcStep(Utility.tcStepList.get(index));
+							testcase.setTcDesc(ExcelHandle.tcDescList.get(index));
+							testcase.setTcStep(ExcelHandle.tcStepList.get(index));
 							testcase.setTcImage(TestBase.tcList.get(id));
 							tcList.add(testcase);
 						}
@@ -94,7 +80,7 @@ public class ExtentReporterNG implements IReporter {
 					e.printStackTrace();
 				}
 				// Create test result file for each test
-				Utility.createExcelFile(TestBase.p.getProperty("resultpath") + context.getName() + ".xlsx");
+				ExcelHandle.createExcelFile(TestBase.p.getProperty("resultpath") + context.getName() + ".xlsx");
 			}
 
 		}
@@ -110,35 +96,37 @@ public class ExtentReporterNG implements IReporter {
 		if (tests.size() > 0) {
 
 			for (ITestResult result : tests.getAllResults()) {
-				//Get Method name
+				// Get Method name
 				method = result.getMethod().getMethodName();
-				//Start test
+				// Start test
 				test = extent.startTest(result.getMethod().getMethodName());
 				for (String group : result.getMethod().getGroups())
 					test.assignCategory(group);
-				//Create test message
+				// Create test message
 				String message = "Test " + status.toString().toLowerCase() + "ed";
 				if (result.getThrowable() != null)
 					message = result.getThrowable().getMessage();
-				
-				//Write test results to excel file
+
+				// Write test results to excel file
 				if (status.toString().equals("pass")) {
-					Utility.writeTestResults(method, 5, "Passed");
+					ExcelHandle.writeTestResults(method, 5, "Passed");
 				} else if (status.toString().equals("fail")) {
-					Utility.writeTestResults(ExtentReporterNG.method, 5, "Failed");
+					ExcelHandle.writeTestResults(ExtentReporterNG.method, 5, "Failed");
 				}
 
-				// Write description, 
+				//Log test case's information
 				for (TestCase tc : tcList) {
-					System.out.println("Size of Test Case List" + tcList.size());
 					if (tc.getTcID().equals(method)) {
+						//Description
 						test.log(LogStatus.INFO, tc.getTcDesc());
+						//Steps
 						test.log(LogStatus.INFO, tc.getTcStep());
+						//Images
 						for (String image : tc.getTcImage()) {
 							String imageTestCase = null;
 							imageTestCase = image.substring(0, image.indexOf("_"));
 							System.out.println("Image:" + imageTestCase);
-							//Add image to report
+							// Add image to report
 							if (imageTestCase.equals(method)) {
 								test.log(LogStatus.INFO,
 										test.addScreenCapture(p.getProperty("imagePath") + image + ".jpg"));
@@ -150,7 +138,7 @@ public class ExtentReporterNG implements IReporter {
 						break;
 					}
 				}
-				
+
 				// Write status to report
 				test.log(status, message);
 
@@ -158,30 +146,6 @@ public class ExtentReporterNG implements IReporter {
 
 			}
 		}
-
-	}
-
-	public static String CaptureScreen(WebDriver driver, String captureName) throws IOException {
-		p = Utility.readConfig();
-		imagePath = p.getProperty("imagePath") + captureName;
-		TakesScreenshot oScn = (TakesScreenshot) driver;
-		File oScnShot = oScn.getScreenshotAs(OutputType.FILE);
-		File oDest = new File(imagePath + ".jpg");
-		try {
-			FileUtils.copyFile(oScnShot, oDest);
-		} catch (IOException e) {
-			System.out.println(e.getMessage());
-		}
-		imageName = imagePath + ".jpg";
-		return imageName;
-	}
-
-	public static String captureScreenShotPopUp(String img) throws Exception {
-		BufferedImage bfImage = new Robot()
-				.createScreenCapture(new Rectangle(Toolkit.getDefaultToolkit().getScreenSize()));
-		ImageIO.write(bfImage, "png", new File(img + ".jpg"));
-		String imageName = img + ".jpg";
-		return imageName;
 
 	}
 

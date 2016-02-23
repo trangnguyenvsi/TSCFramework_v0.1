@@ -23,40 +23,20 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-public class Utility {
+public class ExcelHandle {
 
 	static FileInputStream file;
 	static XSSFWorkbook workbook;
 	static XSSFSheet sheet;
 	static XSSFRow row;
 	static Cell cell;
-	// public static int tcIDCol;
-	// public static int tcDescCol;
-	// public static int tcStepCol;
-
-	// Use for getTable() method
-	// static String testData[][];
-
+	
 	// Use for writeTestResults() method
 	public static ArrayList<String> tcIDList;
 	public static ArrayList<String> tcDescList;
 	public static ArrayList<String> tcStepList;
 	public static HashMap<String, String> testcaseList;
-
-	// --------------------------------------------------Methods--------------------------------------------------------------------
-	/*
-	 * Read from configuration file
-	 */
-	public static Properties readConfig() throws IOException {
-		// Create new properties variable
-		Properties p = new Properties();
-		// Read object properties file
-		InputStream stream = new FileInputStream("./properties/config.properties");
-		// Load input stream file
-		p.load(stream);
-		return p;
-	}
-
+	
 	// -----------------------------------------------------------------------------------------------------------------------------
 	/*
 	 * Read data from table in excel file
@@ -155,16 +135,6 @@ public class Utility {
 
 		List<String> cellValueList = new ArrayList<String>();
 		int columnWanted;
-
-		// List<ActionModel> actionList = new ArrayList<ActionModel>();
-
-		// Define workbook
-		/*
-		 * try { workbook = new XSSFWorkbook(file);
-		 * System.out.println("successfully"); } catch (IOException e) { // TODO
-		 * Auto-generated catch block e.printStackTrace();
-		 * System.out.println("unsuccessfully"); }
-		 */
 		// define sheet
 		sheet = workbook.getSheet(sheetName);
 
@@ -179,12 +149,6 @@ public class Utility {
 			} else
 				cellValueList.add(c.getStringCellValue());
 		}
-		// for (String s:caseNameList){
-		// System.out.println(s+",");
-		// }
-
-		// Get table for all Suites
-
 		return cellValueList;
 
 	}
@@ -202,9 +166,9 @@ public class Utility {
 		sheet = workbook.getSheet(sheetName);
 
 		// list of test case name
-		tcIDList = (ArrayList<String>) Utility.loadCellValueList(sheetName, tcIDCol);
-		tcDescList = (ArrayList<String>) Utility.loadCellValueList(sheetName, tcDescCol);
-		tcStepList = (ArrayList<String>) Utility.loadCellValueList(sheetName, tcStepCol);
+		tcIDList = (ArrayList<String>) ExcelHandle.loadCellValueList(sheetName, tcIDCol);
+		tcDescList = (ArrayList<String>) ExcelHandle.loadCellValueList(sheetName, tcDescCol);
+		tcStepList = (ArrayList<String>) ExcelHandle.loadCellValueList(sheetName, tcStepCol);
 
 	}
 
