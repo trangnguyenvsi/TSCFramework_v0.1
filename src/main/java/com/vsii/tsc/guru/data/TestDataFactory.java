@@ -6,9 +6,13 @@ import com.vsii.tsc.guru.testcase.EditCustomer;
 import com.vsii.tsc.guru.testcase.NewCustomer;
 
 public class TestDataFactory {
-	 @Factory
+	 //@Factory
 	 public Object[] loginToCreateNewCustomer() {
-		 return new Object[]{new NewCustomer("mngr26605","bAqYpep")};
+		 Object[] data = new Object[1];
+		// data[0]= new NewCustomer("mngr30380","vAtepYs");
+		 //data[1]= new EditCustomer("mngr30380","vAtepYs");
+		// return new Object[]{new NewCustomer("mngr26605","bAqYpep")};
+		return data;
 	 }
 	 
 //	 @Factory

@@ -7,28 +7,22 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Properties;
 
-import org.apache.commons.collections.MultiHashMap;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.LocalFileDetector;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.BeforeTest;
 
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
-import com.vsii.tsc.guru.model.TestCase;
-import com.vsii.tsc.guru.report.ExtentReporterNG;
-import com.vsii.tsc.guru.utility.DateTime;
+import com.vsii.tsc.guru.utility.CommonOperations;
 import com.vsii.tsc.guru.utility.DownloadUploadFile;
-import com.vsii.tsc.guru.utility.Utility;
+import com.vsii.tsc.guru.utility.SendMail;
 
 public class TestBase {
 	public static WebDriver driver;
@@ -48,11 +42,8 @@ public class TestBase {
 	@BeforeSuite
 	public void setupSuite() throws IOException {
 		
-		//trial
-		//TestBase.getExtentReport();
-
 		// Read config file
-		p = Utility.readConfig();
+		p = CommonOperations.readConfig();
 		imageList = new ArrayList<String>();
 		
 		//trial
@@ -110,9 +101,9 @@ public class TestBase {
 	}
 	
 	@AfterSuite
-	public void teardownSuite(){
-		//driver.quit();
-		
+	public void teardownSuite() throws Exception{
+		driver.quit();
+		SendMail.execute();
 	}
 	
 }
