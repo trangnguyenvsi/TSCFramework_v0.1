@@ -1,39 +1,23 @@
 package com.vsii.tsc.guru.testcase;
 
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import com.relevantcodes.extentreports.ExtentTest;
-import com.relevantcodes.extentreports.LogStatus;
 import com.vsii.tsc.guru.data.TestData;
 import com.vsii.tsc.guru.pages.method.LoginPageMethod;
-import com.vsii.tsc.guru.report.ExtentReporterNG;
 import com.vsii.tsc.guru.testbase.TestBase;
 import com.vsii.tsc.guru.utility.CommonOperations;
-import com.vsii.tsc.guru.utility.CreateDirectory;
-import com.vsii.tsc.guru.utility.DateTime;
-import com.vsii.tsc.guru.utility.Utility;
 
 public class Login{
 	LoginPageMethod objLogin;
-	ExtentReporterNG report;
-	ExtentTest loginTest;
 
-	/*
-	 * Before class, open the test case file by file name, sheet name and test
-	 * case ID column
-	 */
 	@BeforeClass
 	public void setupClass() throws NumberFormatException, IOException {
-		// create object of Login and Report
 		objLogin = new LoginPageMethod(TestBase.driver);
 	}
 
@@ -44,11 +28,6 @@ public class Login{
 		String loginPageTitle = objLogin.getLoginTitle();
 		Assert.assertTrue(loginPageTitle.contains("Guru99 Bank"));
 	}
-
-	/*
-	 * Create test script for TC_01
-	 */
-
 	@Test(priority = 2, description = "verify Login", dataProvider = "dpLogin", dataProviderClass = TestData.class)
 	public void LO02(String username, String password, String message) throws Exception {
 
@@ -66,9 +45,7 @@ public class Login{
 			String managerID;
 			managerID = objLogin.getManagerIDInManagerPage();
 			Assert.assertTrue(managerID.contains(message));
-
 		}
-
 	}
 	
 	 @Test(priority = 1, description = "verify_Reset_Button", dataProvider = "dpReset", dataProviderClass = TestData.class)

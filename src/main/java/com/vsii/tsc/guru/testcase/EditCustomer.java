@@ -2,25 +2,18 @@ package com.vsii.tsc.guru.testcase;
 
 import java.io.IOException;
 
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import com.relevantcodes.extentreports.ExtentTest;
-import com.relevantcodes.extentreports.LogStatus;
-import com.vsii.tsc.guru.data.TestData;
+import com.vsii.tsc.guru.commethods.CommonMethods;
 import com.vsii.tsc.guru.pages.method.EditCustomerPageMethod;
 import com.vsii.tsc.guru.pages.method.LoginPageMethod;
 import com.vsii.tsc.guru.pages.method.NewCustomerPageMethod;
 import com.vsii.tsc.guru.testbase.TestBase;
 import com.vsii.tsc.guru.utility.CommonOperations;
-import com.vsii.tsc.guru.utility.CreateDirectory;
-import com.vsii.tsc.guru.utility.DateTime;
-import com.vsii.tsc.guru.utility.Utility;
 
 public class EditCustomer {
 	LoginPageMethod objLogin;
@@ -29,25 +22,12 @@ public class EditCustomer {
 	String username;
 	String password;
 
-	// Use constructor for Factory
-	public EditCustomer(String username, String password) {
-		this.username = username;
-		this.password = password;
-	}
-
-	public void login() throws Exception {
-		// If not login, system perform login
-		if (TestBase.driver.findElements(By.name("uid")).size() != 0) {
-			objLogin.loginToManagerPage(username, password);
-		}
-	}
-
 	@BeforeClass
 	public void setupClass() throws Exception {
 		objLogin = new LoginPageMethod(TestBase.driver);
 		objNewCust = new NewCustomerPageMethod(TestBase.driver);
 		objEditCust = new EditCustomerPageMethod(TestBase.driver);
-		login();
+		CommonMethods.checkLogin();
 	}
 
 	@Test(priority = 1, description = "Edit Customer")

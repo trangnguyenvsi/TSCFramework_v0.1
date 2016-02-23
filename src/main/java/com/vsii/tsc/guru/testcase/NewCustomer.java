@@ -1,15 +1,13 @@
 package com.vsii.tsc.guru.testcase;
 
 
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Factory;
 import org.testng.annotations.Test;
 
+import com.vsii.tsc.guru.commethods.CommonMethods;
 import com.vsii.tsc.guru.data.TestData;
-import com.vsii.tsc.guru.pages.LoginPage;
 import com.vsii.tsc.guru.pages.method.EditCustomerPageMethod;
 import com.vsii.tsc.guru.pages.method.LoginPageMethod;
 import com.vsii.tsc.guru.pages.method.NewCustomerPageMethod;
@@ -22,26 +20,13 @@ public class NewCustomer{
 	EditCustomerPageMethod objEditCust;
 	String username;
 	String password;
-	
-	//Use constructor for Factory
-	public NewCustomer(String username, String password){
-		this.username = username;
-		this.password = password;
-	}
-	
-	public void login() throws Exception {
-		//If not login, system perform login
-		if(TestBase.driver.findElements(By.name("uid")).size()!=0){
-			objLogin.loginToManagerPage(username, password);
-		}
-	}
-	
+		
 	@BeforeClass
 	public void setupClass() throws Exception{
 		objLogin = new LoginPageMethod(TestBase.driver);
 		objNewCust = new NewCustomerPageMethod(TestBase.driver);
 		objEditCust = new EditCustomerPageMethod(TestBase.driver);
-		login();
+		CommonMethods.checkLogin();
 	}
 	
 	@Test(priority = 0, description="Verify New Customer link")
