@@ -33,46 +33,46 @@ public class TestBase {
 	public static List<String> imageList;
 	public static String methodName;
 	public static String image;
-	public static String  imageName;
-	//trial
-	public static HashMap<String,List<String>> tcList;
-	
+	public static String imageName;
+	// trial
+	public static HashMap<String, List<String>> tcImageList;
+
 	public RemoteWebDriver remoteDriver;
-	
+
 	@BeforeSuite
 	public void setupSuite() throws IOException {
-		
+
 		// Read config file
 		p = CommonOperations.readConfig();
 		imageList = new ArrayList<String>();
-		
-		//trial
-		tcList = new HashMap<String,List<String>>();
-	
-		
-		if(p.getProperty("local").equals("No")){
-		
-			//The parameter to run on sauce lab
+
+		// trial
+		tcImageList = new HashMap<String, List<String>>();
+
+		if (p.getProperty("local").equals("No")) {
+
+			// The parameter to run on sauce lab
 			DesiredCapabilities caps = DesiredCapabilities.firefox();
 			caps.setCapability("platform", "Windows 7");
 			caps.setCapability("version", "42.0");
 			caps.setCapability("name", "Guru Test 01");
 			caps.setCapability("screenResolution", "1280x1024");
-		
+
 			driver = new RemoteWebDriver(
-								new URL("http://trangntt86:82eb2d76-3286-4d62-8a13-431eac3a552c@ondemand.saucelabs.com:80/wd/hub"),caps);
-			//((RemoteWebDriver) driver).setFileDetector(new LocalFileDetector());
-		}
-		else{
+					new URL("http://trangntt86:82eb2d76-3286-4d62-8a13-431eac3a552c@ondemand.saucelabs.com:80/wd/hub"),
+					caps);
+			// ((RemoteWebDriver) driver).setFileDetector(new
+			// LocalFileDetector());
+		} else {
 			switch (p.getProperty("browserName")) {
 			// Open Firefox browser
 			case ("Firefox"):
 				fprofile = new FirefoxProfile();
-			
-			 	DownloadUploadFile fileObj = new DownloadUploadFile(TestBase.fprofile);
-			 	//Setup for Firefox profile
+
+				DownloadUploadFile fileObj = new DownloadUploadFile(TestBase.fprofile);
+				// Setup for Firefox profile
 				fileObj.setupDownloadFile(p.getProperty("downloadLocation"));
-				
+
 				driver = new FirefoxDriver(fprofile);
 				break;
 			// Open Chrome browser
@@ -93,17 +93,17 @@ public class TestBase {
 				break;
 			}
 		}
-			// Open base URL
-			driver.get(p.getProperty("baseUrl"));
-			driver.manage().window().maximize();
-			//Create instance of report
-			//extent = ExtentReporterNG.Instance();
+		// Open base URL
+		driver.get(p.getProperty("baseUrl"));
+		driver.manage().window().maximize();
+		// Create instance of report
+		// extent = ExtentReporterNG.Instance();
 	}
-	
+
 	@AfterSuite
-	public void teardownSuite() throws Exception{
+	public void teardownSuite() throws Exception {
 		driver.quit();
 		SendMail.execute();
 	}
-	
+
 }

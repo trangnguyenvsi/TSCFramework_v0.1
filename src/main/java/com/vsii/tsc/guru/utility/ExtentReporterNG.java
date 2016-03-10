@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 
+import org.apache.commons.collections.bag.SynchronizedSortedBag;
 import org.testng.IReporter;
 import org.testng.IResultMap;
 import org.testng.ISuite;
@@ -22,17 +23,18 @@ import com.vsii.tsc.guru.testbase.TestBase;
 import com.vsii.tsc.guru.utility.ExcelHandle;
 
 public class ExtentReporterNG implements IReporter {
-	static Properties p;
+	// static Properties p;
 	public static ExtentReports extent;
 	public ITestResult result;
-	static String method;
-
+	// static String method;
+	String categoryName;
 	public TestCase testcase;
 	public List<TestCase> tcList;
 
 	// Write test results into test report
 	@Override
 	public void generateReport(List<XmlSuite> xmlSuites, List<ISuite> suites, String outputDirectory) {
+
 		extent = new ExtentReports(TestBase.p.getProperty("reportPath"), false);
 
 		for (ISuite suite : suites) {
@@ -40,6 +42,7 @@ public class ExtentReporterNG implements IReporter {
 
 			for (ISuiteResult r : result.values()) {
 				ITestContext context = r.getTestContext();
+				categoryName = context.getName();
 
 				// Open excel file with the sheet name is the test name in
 				// testng.xml
@@ -52,13 +55,14 @@ public class ExtentReporterNG implements IReporter {
 					tcList = new ArrayList<TestCase>();
 					// Create test case List
 					for (String id : ExcelHandle.tcIDList) {
+
 						int index = ExcelHandle.tcIDList.indexOf(id);
-						if (TestBase.tcList.containsKey(id)) {
+						if (TestBase.tcImageList.containsKey(id)) {
 							testcase = new TestCase();
 							testcase.setTcID(id);
 							testcase.setTcDesc(ExcelHandle.tcDescList.get(index));
 							testcase.setTcStep(ExcelHandle.tcStepList.get(index));
-							testcase.setTcImage(TestBase.tcList.get(id));
+							testcase.setTcImage(TestBase.tcImageList.get(id));
 							tcList.add(testcase);
 						}
 					}
@@ -92,6 +96,9 @@ public class ExtentReporterNG implements IReporter {
 
 	private void buildTestNodes(IResultMap tests, LogStatus status) throws IOException {
 
+		String method;
+
+
 		ExtentTest test;
 		if (tests.size() > 0) {
 
@@ -100,8 +107,10 @@ public class ExtentReporterNG implements IReporter {
 				method = result.getMethod().getMethodName();
 				// Start test
 				test = extent.startTest(result.getMethod().getMethodName());
-				for (String group : result.getMethod().getGroups())
-					test.assignCategory(group);
+				// Create category
+				//for (String group : result.getMethod().getGroups())
+					//test.assignCategory(group);
+				test.assignCategory(categoryName);
 				// Create test message
 				String message = "Test " + status.toString().toLowerCase() + "ed";
 				if (result.getThrowable() != null)
@@ -111,29 +120,31 @@ public class ExtentReporterNG implements IReporter {
 				if (status.toString().equals("pass")) {
 					ExcelHandle.writeTestResults(method, 5, "Passed");
 				} else if (status.toString().equals("fail")) {
-					ExcelHandle.writeTestResults(ExtentReporterNG.method, 5, "Failed");
+					ExcelHandle.writeTestResults(method, 5, "Failed");
 				}
 
-				//Log test case's information
+				// Log test case's information
 				for (TestCase tc : tcList) {
 					if (tc.getTcID().equals(method)) {
-						//Description
+						// Description
 						test.log(LogStatus.INFO, tc.getTcDesc());
-						//Steps
+						// Steps
 						test.log(LogStatus.INFO, tc.getTcStep());
-						//Images
+						// Images
 						for (String image : tc.getTcImage()) {
 							String imageTestCase = null;
 							imageTestCase = image.substring(0, image.indexOf("_"));
+							System.out.println(image);
 							System.out.println("Image:" + imageTestCase);
 							// Add image to report
 							if (imageTestCase.equals(method)) {
 								test.log(LogStatus.INFO,
-										test.addScreenCapture(p.getProperty("imagePath") + image + ".jpg"));
+										test.addScreenCapture(TestBase.p.getProperty("imagePath") + image + ".jpg"));
+								// After add image to report, remove this image
+								// from imageList
 								TestBase.imageList.remove(image);
 								break;
 							}
-
 						}
 						break;
 					}

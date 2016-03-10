@@ -129,17 +129,17 @@ public class CommonOperations {
 	 * Create the test case's image list
 	 */
 	private static void createTestCaseList() {
-		if (TestBase.tcList.size() == 0) {
+		if (TestBase.tcImageList.size() == 0) {
 			TestBase.imageList = new ArrayList<String>();
 			TestBase.imageList.add(TestBase.imageName);
-			TestBase.tcList.put(TestBase.methodName, TestBase.imageList);
+			TestBase.tcImageList.put(TestBase.methodName, TestBase.imageList);
 		} else {
-			if (TestBase.tcList.containsKey(TestBase.methodName)) {
-				TestBase.tcList.get(TestBase.methodName).add(TestBase.imageName);
+			if (TestBase.tcImageList.containsKey(TestBase.methodName)) {
+				TestBase.tcImageList.get(TestBase.methodName).add(TestBase.imageName);
 			} else {
 				TestBase.imageList = new ArrayList<String>();
 				TestBase.imageList.add(TestBase.imageName);
-				TestBase.tcList.put(TestBase.methodName, TestBase.imageList);
+				TestBase.tcImageList.put(TestBase.methodName, TestBase.imageList);
 			}
 		}
 	}
