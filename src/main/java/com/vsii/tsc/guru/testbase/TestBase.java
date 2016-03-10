@@ -59,7 +59,7 @@ public class TestBase {
 			caps.setCapability("screenResolution", "1280x1024");
 
 			driver = new RemoteWebDriver(
-					new URL("http://trangntt86:82eb2d76-3286-4d62-8a13-431eac3a552c@ondemand.saucelabs.com:80/wd/hub"),
+					new URL("http://trangnguyen:c8f52d3b-7d2a-431c-b217-27f6734f83fe@ondemand.saucelabs.com:80/wd/hub"),
 					caps);
 			// ((RemoteWebDriver) driver).setFileDetector(new
 			// LocalFileDetector());
