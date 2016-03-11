@@ -8,7 +8,7 @@ import com.vsii.tsc.guru.testcase.NewCustomer;
 import com.vsii.tsc.guru.utility.ExcelHandle;;
 
 public class TestData {
-	@DataProvider(name = "dpReset")
+	@DataProvider(name="reset")
 	public static Object[][] getLoginValid() {
 		Object[][] data = ExcelHandle.getTable("./data/TestData.xlsx", "Login", "LO03");
 		return data;

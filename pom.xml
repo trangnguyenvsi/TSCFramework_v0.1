@@ -26,8 +26,9 @@
 		</dependency>
 		<dependency>
 			<groupId>org.apache.poi</groupId>
-			<artifactId>poi</artifactId>
 			<version>3.12-beta1</version>
+			<artifactId>poi</artifactId>
+			
 		</dependency>
 		<!-- Log4j -->
 		<dependency>
