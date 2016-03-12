@@ -19,7 +19,6 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 import com.vsii.tsc.guru.model.TestCase;
-import com.vsii.tsc.guru.testbase.TestBase;
 import com.vsii.tsc.guru.utility.ExcelHandle;
 
 public class ExtentReporterNG implements IReporter {
