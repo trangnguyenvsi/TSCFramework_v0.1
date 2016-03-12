@@ -8,8 +8,8 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import com.vsii.tsc.guru.data.TestData;
 import com.vsii.tsc.guru.pages.method.LoginPageMethod;
+import com.vsii.tsc.guru.testdata.TestData;
 import com.vsii.tsc.guru.utility.CommonOperations;
 import com.vsii.tsc.guru.utility.TestBase;
 
