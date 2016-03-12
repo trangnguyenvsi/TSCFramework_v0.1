@@ -1,4 +1,4 @@
-package com.vsii.tsc.guru.data;
+package com.vsii.tsc.guru.testdata;
 
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Factory;
