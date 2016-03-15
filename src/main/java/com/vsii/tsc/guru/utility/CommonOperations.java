@@ -125,6 +125,13 @@ public class CommonOperations {
 	//-----------------------------------------------------------------------------
 	/*
 	 * Create the test case's image list
+	 * 1. If tcImageList is empty, create new imageList then add image to imageList.
+	 * After that put test method and imageList to tcImageList
+	 * 2. If tcImageList is not empty, and tcImageList's key contain the test method
+	 * add imageName to the tcImageList by key (method name)
+	 * 3. If tcImageList is not empty and the key doesn't contain method name
+	 * create new ImageList then add image to this list. 
+	 * After that put the method name and imageList to tcImageList
 	 */
 	private static void createTestCaseList() {
 		if (TestBase.tcImageList.size() == 0) {

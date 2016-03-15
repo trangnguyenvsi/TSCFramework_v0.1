@@ -155,7 +155,7 @@ public class ExcelHandle {
 
 	// -------------------------------------------------------------------------------------------------------------------------------
 	/*
-	 * Open excel file
+	 * Open excel file by filepath, sheet name, index of TC's ID, TC's Description and TC's steps
 	 */
 	public static void openExcelFile(String filePath, String sheetName, int tcIDCol, int tcDescCol, int tcStepCol)
 			throws IOException {
