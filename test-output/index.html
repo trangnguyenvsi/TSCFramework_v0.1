@@ -23,7 +23,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 5 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -37,7 +37,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Suite">
-              <span class="suite-name border-passed">Suite</span>
+              <span class="suite-name border-failed">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -48,12 +48,12 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Suite">
-                    <span>D:\MyJobs\RemarkMedia\Build_Project_for_TSC\NewSelenium\testng.xml</span>
+                    <span>D:\MyJobs\RemarkMedia\Projects\SeleniumPractice\testng.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
                   <a href="#" class="navigator-link " panel-name="testlist-Suite">
-                    <span class="test-stats">1 test</span>
+                    <span class="test-stats">2 tests</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -90,7 +90,61 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">12 methods, 5 failed,  1 skipped,  6 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Suite">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.vsii.tsc.guru.testcase.NewCustomer" hash-for-method="CN02(Customer name must not be blank
+Date Field must not be blank
+Address Field must not be blank
+City Fi...)">CN02(Customer name must not be blank
+Date Field must not be blank
+Address Field must not be blank
+City Fi...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.vsii.tsc.guru.testcase.NewCustomer" hash-for-method="CN03(you, 10-10-1991, Hanoi, Hanoi, Hanoi, 201365, 1045, you54@gmail.com, 123456, Customer Registered Suc...)">CN03(you, 10-10-1991, Hanoi, Hanoi, Hanoi, 201365, 1045, you54@gmail.com, 123456, Customer Registered Suc...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.vsii.tsc.guru.testcase.Login" hash-for-method="LO02(mngr22018, nAgezam , Manger Id : mngr22018)">LO02(mngr22018, nAgezam , Manger Id : mngr22018)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.vsii.tsc.guru.testcase.Login" hash-for-method="LO02(, nAgezam , User-ID must not be blank)">LO02(, nAgezam , User-ID must not be blank)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.vsii.tsc.guru.testcase.Login" hash-for-method="LO02(mngr22018, , Password must not be blank)">LO02(mngr22018, , Password must not be blank)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Suite -->
+                  </li>
+                  <li>
+                    <span class="method-list-title skipped">Skipped methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods skipped suite-Suite"> (hide)</a> <!-- hide-methods skipped suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods skipped suite-Suite"> (show)</a> <!-- show-methods skipped suite-Suite -->
+                    </span>
+                    <div class="method-list-content skipped suite-Suite">
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.vsii.tsc.guru.testcase.Login" hash-for-method="LO03">LO03</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content skipped suite-Suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -101,7 +155,32 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.vsii.tsc.guru.testcase.TestDownloadUpload" hash-for-method="OpenURL">OpenURL</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.vsii.tsc.guru.testcase.NewCustomer" hash-for-method="CN01">CN01</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.vsii.tsc.guru.testcase.Login" hash-for-method="LO01">LO01</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.vsii.tsc.guru.testcase.Login" hash-for-method="LO02( ,  , User or Password is not valid)">LO02( ,  , User or Password is not valid)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.vsii.tsc.guru.testcase.Login" hash-for-method="LO02(Tester01, nAgezam , User or Password is not valid)">LO02(Tester01, nAgezam , User or Password is not valid)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.vsii.tsc.guru.testcase.Login" hash-for-method="LO02(mngr22018, 123456, User or Password is not valid)">LO02(mngr22018, 123456, User or Password is not valid)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.vsii.tsc.guru.testcase.Login" hash-for-method="LO02(Tester02, 123456, User or Password is not valid)">LO02(Tester02, 123456, User or Password is not valid)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -116,17 +195,237 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
-          <div class="suite-Suite-class-passed">
+          <div class="suite-Suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">com.vsii.tsc.guru.testcase.TestDownloadUpload</span>
+              <img src="failed.png"/>
+              <span class="class-name">com.vsii.tsc.guru.testcase.Login</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="OpenURL">
-                  </a> <!-- OpenURL -->
-                  <span class="method-name">OpenURL</span>
+                  <a name="LO02(mngr22018, nAgezam , Manger Id : mngr22018)">
+                  </a> <!-- LO02(mngr22018, nAgezam , Manger Id : mngr22018) -->
+                  <span class="method-name">LO02</span>
+                  <span class="parameters">(mngr22018, nAgezam , Manger Id : mngr22018)</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
+	at com.vsii.tsc.guru.testcase.Login.LO02(Login.java:43)
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(verify Login)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="LO02(, nAgezam , User-ID must not be blank)">
+                  </a> <!-- LO02(, nAgezam , User-ID must not be blank) -->
+                  <span class="method-name">LO02</span>
+                  <span class="parameters">(, nAgezam , User-ID must not be blank)</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
+	at com.vsii.tsc.guru.testcase.Login.LO02(Login.java:43)
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(verify Login)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="LO02(mngr22018, , Password must not be blank)">
+                  </a> <!-- LO02(mngr22018, , Password must not be blank) -->
+                  <span class="method-name">LO02</span>
+                  <span class="parameters">(mngr22018, , Password must not be blank)</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;html/body/table/tbody/tr/td/table/tbody/tr[3]/td&quot;}
+Command duration or timeout: 26 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.52.0&apos;, revision: &apos;4c2593cfc3689a7fcd7be52549167e5ccc93ad28&apos;, time: &apos;2016-02-11 11:22:43&apos;
+System info: host: &apos;trangntt-w7&apos;, ip: &apos;192.168.100.30&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_25&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=44.0.2, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 657b6d38-a1e8-4a82-a229-6eea261d7c46
+*** Element info: {Using=xpath, value=html/body/table/tbody/tr/td/table/tbody/tr[3]/td}
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:500)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy9.getText(Unknown Source)
+	at com.vsii.tsc.guru.pages.method.LoginPageMethod.getManagerIDInManagerPage(LoginPageMethod.java:113)
+	at com.vsii.tsc.guru.testcase.Login.LO02(Login.java:46)
+Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;html/body/table/tbody/tr/td/table/tbody/tr[3]/td&quot;}
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.52.0&apos;, revision: &apos;4c2593cfc3689a7fcd7be52549167e5ccc93ad28&apos;, time: &apos;2016-02-11 11:22:43&apos;
+System info: host: &apos;trangntt-w7&apos;, ip: &apos;192.168.100.30&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_25&apos;
+Driver info: driver.version: unknown
+	at &lt;anonymous class&gt;.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/trangntt/AppData/Local/Temp/anonymous8977311350190995000webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10723)
+	at &lt;anonymous class&gt;.FirefoxDriver.prototype.findElement(file:///C:/Users/trangntt/AppData/Local/Temp/anonymous8977311350190995000webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10732)
+	at &lt;anonymous class&gt;.DelayedCommand.prototype.executeInternal_/h(file:///C:/Users/trangntt/AppData/Local/Temp/anonymous8977311350190995000webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12614)
+	at &lt;anonymous class&gt;.DelayedCommand.prototype.executeInternal_(file:///C:/Users/trangntt/AppData/Local/Temp/anonymous8977311350190995000webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12619)
+	at &lt;anonymous class&gt;.DelayedCommand.prototype.execute/&lt;(file:///C:/Users/trangntt/AppData/Local/Temp/anonymous8977311350190995000webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12561)
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(verify Login)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-failed -->
+          <div class="suite-Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com.vsii.tsc.guru.testcase.NewCustomer</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="CN02(Customer name must not be blank
+Date Field must not be blank
+Address Field must not be blank
+City Fi...)">
+                  </a> <!-- CN02(Customer name must not be blank
+Date Field must not be blank
+Address Field must not be blank
+City Fi...) -->
+                  <span class="method-name">CN02</span>
+                  <span class="parameters">(Customer name must not be blank
+Date Field must not be blank
+Address Field must not be blank
+City Field must not be blank
+State must not be blank
+PIN Code must not be blank
+Mobile no must not be blank
+Email-ID must not be blank
+Password must not be blank)</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
+	at com.vsii.tsc.guru.testcase.NewCustomer.CN02(NewCustomer.java:46)
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Validate Create New Customer form)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="CN03(you, 10-10-1991, Hanoi, Hanoi, Hanoi, 201365, 1045, you54@gmail.com, 123456, Customer Registered Suc...)">
+                  </a> <!-- CN03(you, 10-10-1991, Hanoi, Hanoi, Hanoi, 201365, 1045, you54@gmail.com, 123456, Customer Registered Suc...) -->
+                  <span class="method-name">CN03</span>
+                  <span class="parameters">(you, 10-10-1991, Hanoi, Hanoi, Hanoi, 201365, 1045, you54@gmail.com, 123456, Customer Registered Successfully!!!)</span>
+                  <div class="stack-trace">org.openqa.selenium.UnhandledAlertException: Unexpected modal dialog (text: Email Address Already Exist !!): Email Address Already Exist !!
+Build info: version: &apos;2.52.0&apos;, revision: &apos;4c2593cfc3689a7fcd7be52549167e5ccc93ad28&apos;, time: &apos;2016-02-11 11:22:43&apos;
+System info: host: &apos;trangntt-w7&apos;, ip: &apos;192.168.100.30&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_25&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=44.0.2, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 657b6d38-a1e8-4a82-a229-6eea261d7c46
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.createUnhandledAlertException(ErrorHandler.java:187)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:154)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:701)
+	at org.openqa.selenium.remote.RemoteWebDriver.getPageSource(RemoteWebDriver.java:511)
+	at com.vsii.tsc.guru.testcase.NewCustomer.CN03(NewCustomer.java:65)
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Verify Add New Customer)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-failed -->
+          <div class="suite-Suite-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">com.vsii.tsc.guru.testcase.Login</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="LO03">
+                  </a> <!-- LO03 -->
+                  <span class="method-name">LO03</span>
+                  <div class="stack-trace">org.testng.TestNGException: 
+Method public void com.vsii.tsc.guru.testcase.Login.LO03(java.lang.String,java.lang.String) throws java.lang.Exception requires a @DataProvider named : dpReset in class com.vsii.tsc.guru.testdata.TestData
+... Removed 21 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(verify_Reset_Button)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-skipped -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.vsii.tsc.guru.testcase.Login</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="LO01">
+                  </a> <!-- LO01 -->
+                  <span class="method-name">LO01</span>
+                  <em>
+(Verify Title of Login Page)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="LO02( ,  , User or Password is not valid)">
+                  </a> <!-- LO02( ,  , User or Password is not valid) -->
+                  <span class="method-name">LO02</span>
+                  <span class="parameters">( ,  , User or Password is not valid)</span>
+                  <em>
+(verify Login)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="LO02(Tester01, nAgezam , User or Password is not valid)">
+                  </a> <!-- LO02(Tester01, nAgezam , User or Password is not valid) -->
+                  <span class="method-name">LO02</span>
+                  <span class="parameters">(Tester01, nAgezam , User or Password is not valid)</span>
+                  <em>
+(verify Login)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="LO02(mngr22018, 123456, User or Password is not valid)">
+                  </a> <!-- LO02(mngr22018, 123456, User or Password is not valid) -->
+                  <span class="method-name">LO02</span>
+                  <span class="parameters">(mngr22018, 123456, User or Password is not valid)</span>
+                  <em>
+(verify Login)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="LO02(Tester02, 123456, User or Password is not valid)">
+                  </a> <!-- LO02(Tester02, 123456, User or Password is not valid) -->
+                  <span class="method-name">LO02</span>
+                  <span class="parameters">(Tester02, 123456, User or Password is not valid)</span>
+                  <em>
+(verify Login)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.vsii.tsc.guru.testcase.NewCustomer</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="CN01">
+                  </a> <!-- CN01 -->
+                  <span class="method-name">CN01</span>
+                  <em>
+(Verify New Customer link)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -134,7 +433,7 @@
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">D:\MyJobs\RemarkMedia\Build_Project_for_TSC\NewSelenium\testng.xml</span>
+            <span class="header-content">D:\MyJobs\RemarkMedia\Projects\SeleniumPractice\testng.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -142,14 +441,19 @@
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Suite&quot;&gt;
   &lt;listeners&gt;
-    &lt;listener class-name=&quot;com.vsii.tsc.guru.report.ExtentReporterNG&quot;/&gt;
+    &lt;listener class-name=&quot;com.vsii.tsc.utility.ExtentReporterNG&quot;/&gt;
   &lt;/listeners&gt;
   &lt;test name=&quot;Login&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.vsii.tsc.guru.testbase.TestBase&quot;/&gt;
-      &lt;class name=&quot;com.vsii.tsc.guru.testcase.TestDownloadUpload&quot;/&gt;
+      &lt;class name=&quot;com.vsii.tsc.utility.TestBase&quot;/&gt;
+      &lt;class name=&quot;com.vsii.tsc.guru.testcase.Login&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Login --&gt;
+  &lt;test name=&quot;CreateNewCustomer&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.vsii.tsc.guru.testcase.NewCustomer&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- CreateNewCustomer --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -162,6 +466,9 @@
             <ul>
               <li>
                 <span class="test-name">Login (2 classes)</span>
+              </li>
+              <li>
+                <span class="test-name">CreateNewCustomer (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -187,16 +494,60 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(12);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'OpenURL')
-data.setCell(0, 2, 'com.vsii.tsc.guru.testcase.TestDownloadUpload')
-data.setCell(0, 3, 32321);
+data.setCell(0, 1, 'CN03')
+data.setCell(0, 2, 'com.vsii.tsc.guru.testcase.NewCustomer')
+data.setCell(0, 3, 3433);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'LO02')
+data.setCell(1, 2, 'com.vsii.tsc.guru.testcase.Login')
+data.setCell(1, 3, 3202);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'LO02')
+data.setCell(2, 2, 'com.vsii.tsc.guru.testcase.Login')
+data.setCell(2, 3, 2543);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'LO02')
+data.setCell(3, 2, 'com.vsii.tsc.guru.testcase.Login')
+data.setCell(3, 3, 2247);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'LO02')
+data.setCell(4, 2, 'com.vsii.tsc.guru.testcase.Login')
+data.setCell(4, 3, 2191);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'LO02')
+data.setCell(5, 2, 'com.vsii.tsc.guru.testcase.Login')
+data.setCell(5, 3, 1913);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'LO02')
+data.setCell(6, 2, 'com.vsii.tsc.guru.testcase.Login')
+data.setCell(6, 3, 1840);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'LO02')
+data.setCell(7, 2, 'com.vsii.tsc.guru.testcase.Login')
+data.setCell(7, 3, 1566);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'CN01')
+data.setCell(8, 2, 'com.vsii.tsc.guru.testcase.NewCustomer')
+data.setCell(8, 3, 1256);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'CN02')
+data.setCell(9, 2, 'com.vsii.tsc.guru.testcase.NewCustomer')
+data.setCell(9, 3, 796);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'LO01')
+data.setCell(10, 2, 'com.vsii.tsc.guru.testcase.Login')
+data.setCell(10, 3, 117);
+data.setCell(11, 0, 11)
+data.setCell(11, 1, 'LO03')
+data.setCell(11, 2, 'com.vsii.tsc.guru.testcase.Login')
+data.setCell(11, 3, 0);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 32 seconds</span>
+              <span class="suite-total-time">Total running time: 21 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -222,24 +573,138 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.vsii.tsc.guru.testbase.TestBase</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.vsii.tsc.utility.TestBase</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
                 <span class="method-name">setupSuite</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
-              <div class="chronological-class-name">com.vsii.tsc.guru.testcase.TestDownloadUpload</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.vsii.tsc.guru.testcase.Login</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">setupClass</span>
+                <span class="method-start">8649 ms</span>
+              </div> <!-- configuration-class before -->
               <div class="test-method">
-                <span class="method-name">OpenURL</span>
-                <span class="method-start">13650 ms</span>
+                <span class="method-name">LO01</span>
+                <span class="method-start">8693 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod</span>
+                <span class="method-start">8813 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">LO02(Tester01, nAgezam , User or Password is not valid)</span>
+                <span class="method-start">11979 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod</span>
+                <span class="method-start">14227 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">LO02(mngr22018, 123456, User or Password is not valid)</span>
+                <span class="method-start">14747 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod</span>
+                <span class="method-start">16660 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">LO02(Tester02, 123456, User or Password is not valid)</span>
+                <span class="method-start">16930 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod</span>
+                <span class="method-start">19122 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">LO02(, nAgezam , User-ID must not be blank)</span>
+                <span class="method-start">19368 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod</span>
+                <span class="method-start">21210 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">LO02(mngr22018, , Password must not be blank)</span>
+                <span class="method-start">21444 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod</span>
+                <span class="method-start">24658 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">LO02( ,  , User or Password is not valid)</span>
+                <span class="method-start">26930 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod</span>
+                <span class="method-start">28496 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">LO02(mngr22018, nAgezam , Manger Id : mngr22018)</span>
+                <span class="method-start">28743 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod</span>
+                <span class="method-start">31289 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-class after">
+                <span class="method-name">teardownClass</span>
+                <span class="method-start">31526 ms</span>
+              </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
-              <div class="chronological-class-name">com.vsii.tsc.guru.testbase.TestBase</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.vsii.tsc.guru.testcase.NewCustomer</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">setupClass</span>
+                <span class="method-start">31582 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">CN01</span>
+                <span class="method-start">33161 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod</span>
+                <span class="method-start">34419 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">CN02(Customer name must not be blank
+Date Field must not be blank
+Address Field must not be blank
+City Fi...)</span>
+                <span class="method-start">36793 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod</span>
+                <span class="method-start">37592 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">CN03(you, 10-10-1991, Hanoi, Hanoi, Hanoi, 201365, 1045, you54@gmail.com, 123456, Customer Registered Suc...)</span>
+                <span class="method-start">39919 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod</span>
+                <span class="method-start">43363 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.vsii.tsc.utility.TestBase</div> <!-- chronological-class-name -->
               <div class="configuration-suite after">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">teardownSuite</span>
-                <span class="method-start">46009 ms</span>
+                <span class="method-start">45686 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

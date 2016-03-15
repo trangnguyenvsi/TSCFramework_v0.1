@@ -12,8 +12,8 @@ import com.vsii.tsc.guru.commethods.CommonMethods;
 import com.vsii.tsc.guru.pages.method.EditCustomerPageMethod;
 import com.vsii.tsc.guru.pages.method.LoginPageMethod;
 import com.vsii.tsc.guru.pages.method.NewCustomerPageMethod;
-import com.vsii.tsc.guru.utility.CommonOperations;
-import com.vsii.tsc.guru.utility.TestBase;
+import com.vsii.tsc.utility.CommonOperations;
+import com.vsii.tsc.utility.TestBase;
 
 public class EditCustomer {
 	LoginPageMethod objLogin;

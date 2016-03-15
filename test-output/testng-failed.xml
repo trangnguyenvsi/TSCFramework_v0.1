@@ -2,20 +2,56 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
   <listeners>
-    <listener class-name="com.vsii.tsc.guru.report.ExtentReporterNG"/>
+    <listener class-name="com.vsii.tsc.utility.ExtentReporterNG"/>
   </listeners>
   <test name="Login(failed)">
     <classes>
-      <class name="com.vsii.tsc.guru.testcase.TestDownloadUpload">
+      <class name="com.vsii.tsc.guru.testcase.Login">
         <methods>
-          <include name="OpenURL"/>
+          <include name="afterMethod"/>
+          <include name="teardownClass"/>
+          <include name="LO03"/>
+          <include name="setupClass"/>
+          <include name="LO02" invocation-numbers="3 4 6"/>
         </methods>
-      </class> <!-- com.vsii.tsc.guru.testcase.TestDownloadUpload -->
-      <class name="com.vsii.tsc.guru.testbase.TestBase">
+      </class> <!-- com.vsii.tsc.guru.testcase.Login -->
+      <class name="com.vsii.tsc.utility.TestBase">
         <methods>
+          <include name="teardownSuite"/>
           <include name="setupSuite"/>
         </methods>
-      </class> <!-- com.vsii.tsc.guru.testbase.TestBase -->
+      </class> <!-- com.vsii.tsc.utility.TestBase -->
+      <class name="com.vsii.tsc.guru.testcase.NewCustomer">
+        <methods>
+          <include name="afterMethod"/>
+          <include name="setupClass"/>
+        </methods>
+      </class> <!-- com.vsii.tsc.guru.testcase.NewCustomer -->
     </classes>
   </test> <!-- Login(failed) -->
+  <test name="CreateNewCustomer(failed)">
+    <classes>
+      <class name="com.vsii.tsc.guru.testcase.Login">
+        <methods>
+          <include name="afterMethod"/>
+          <include name="teardownClass"/>
+          <include name="setupClass"/>
+        </methods>
+      </class> <!-- com.vsii.tsc.guru.testcase.Login -->
+      <class name="com.vsii.tsc.utility.TestBase">
+        <methods>
+          <include name="teardownSuite"/>
+          <include name="setupSuite"/>
+        </methods>
+      </class> <!-- com.vsii.tsc.utility.TestBase -->
+      <class name="com.vsii.tsc.guru.testcase.NewCustomer">
+        <methods>
+          <include name="CN02" invocation-numbers="0"/>
+          <include name="afterMethod"/>
+          <include name="setupClass"/>
+          <include name="CN03" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.vsii.tsc.guru.testcase.NewCustomer -->
+    </classes>
+  </test> <!-- CreateNewCustomer(failed) -->
 </suite> <!-- Failed suite [Suite] -->

@@ -3,11 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.vsii.tsc.guru.testcase.TestDownloadUpload">
+      <class name="test.TestA">
         <methods>
-          <include name="OpenURL"/>
+          <include name="A"/>
         </methods>
-      </class> <!-- com.vsii.tsc.guru.testcase.TestDownloadUpload -->
+      </class> <!-- test.TestA -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

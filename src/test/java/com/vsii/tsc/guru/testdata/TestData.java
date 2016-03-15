@@ -5,7 +5,7 @@ import org.testng.annotations.Factory;
 
 import com.vsii.tsc.guru.testcase.Login;
 import com.vsii.tsc.guru.testcase.NewCustomer;
-import com.vsii.tsc.guru.utility.ExcelHandle;;
+import com.vsii.tsc.utility.ExcelHandle;;
 
 public class TestData {
 	@DataProvider(name="reset")

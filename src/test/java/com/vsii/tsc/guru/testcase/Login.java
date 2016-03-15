@@ -10,8 +10,8 @@ import org.testng.annotations.Test;
 
 import com.vsii.tsc.guru.pages.method.LoginPageMethod;
 import com.vsii.tsc.guru.testdata.TestData;
-import com.vsii.tsc.guru.utility.CommonOperations;
-import com.vsii.tsc.guru.utility.TestBase;
+import com.vsii.tsc.utility.CommonOperations;
+import com.vsii.tsc.utility.TestBase;
 
 public class Login{
 	LoginPageMethod objLogin;

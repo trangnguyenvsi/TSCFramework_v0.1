@@ -3,8 +3,8 @@ package com.vsii.tsc.guru.testcase;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
-import com.vsii.tsc.guru.utility.DownloadUploadFile;
-import com.vsii.tsc.guru.utility.TestBase;
+import com.vsii.tsc.utility.DownloadUploadFile;
+import com.vsii.tsc.utility.TestBase;
 
 public class TestDownloadUpload {
 	

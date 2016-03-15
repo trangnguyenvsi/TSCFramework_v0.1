@@ -3,7 +3,7 @@ package com.vsii.tsc.guru.commethods;
 import org.openqa.selenium.By;
 
 import com.vsii.tsc.guru.pages.method.LoginPageMethod;
-import com.vsii.tsc.guru.utility.TestBase;
+import com.vsii.tsc.utility.TestBase;
 
 public class CommonMethods {
   //Check login or not

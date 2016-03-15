@@ -4,7 +4,8 @@ package com.vsii.tsc.guru.testcase;
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import com.vsii.tsc.guru.utility.DBConnection;
+
+import com.vsii.tsc.utility.DBConnection;
 
 public class testDatabase {
 

@@ -1,4 +1,4 @@
-package com.vsii.tsc.guru.model;
+package com.vsii.tsc.model;
 
 import java.util.List;
 

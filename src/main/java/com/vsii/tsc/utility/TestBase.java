@@ -1,4 +1,4 @@
-package com.vsii.tsc.guru.utility;
+package com.vsii.tsc.utility;
 
 import java.io.IOException;
 import java.net.URL;

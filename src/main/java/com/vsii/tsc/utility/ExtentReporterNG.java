@@ -1,4 +1,4 @@
-package com.vsii.tsc.guru.utility;
+package com.vsii.tsc.utility;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -15,8 +15,8 @@ import org.testng.xml.XmlSuite;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
-import com.vsii.tsc.guru.model.TestCase;
-import com.vsii.tsc.guru.utility.ExcelHandle;
+import com.vsii.tsc.model.TestCase;
+import com.vsii.tsc.utility.ExcelHandle;
 
 public class ExtentReporterNG implements IReporter {
 	// static Properties p;
@@ -80,7 +80,9 @@ public class ExtentReporterNG implements IReporter {
 					e.printStackTrace();
 				}
 				// Create test result file for each test
-				ExcelHandle.createExcelFile(TestBase.p.getProperty("resultpath") + context.getName() + ".xlsx");
+				String dir = TestBase.p.getProperty("resultpath");
+				CommonOperations.createDir(dir);
+				ExcelHandle.createExcelFile(dir +TestBase.p.getProperty("resultFile")+ context.getName() + ".xlsx");
 			}
 
 		}
