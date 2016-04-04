@@ -11,6 +11,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
+
 import javax.imageio.ImageIO;
 
 import org.apache.commons.io.FileUtils;
@@ -22,6 +23,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.ITestResult;
+
+import com.vsii.tsc.model.TCImageResults;
 
 @SuppressWarnings("deprecation")
 public class CommonOperations {
@@ -71,7 +75,7 @@ public class CommonOperations {
 	 * Take picture after test
 	 */
 	public static void takePicture() throws Exception {
-		TestBase.imageName = TestBase.methodName + "_" + DateTime.createDateText();
+		TestBase.imageName = TestBase.methodName + "_" + DateTime.createDateText()+"-"+TestBase.testStatus;
 		// Capture popup
 		if (CommonOperations.isAlertPresent(TestBase.driver)) {
 			String dir = TestBase.p.getProperty("imagePath");
@@ -86,7 +90,8 @@ public class CommonOperations {
 			CaptureScreen(TestBase.driver, TestBase.imageName);
 			createTestCaseList();
 		}
-		System.out.println("Image List Size" + TestBase.imageList.size());
+		//System.out.println("Image List Size" + TestBase.imageList.size());
+		
 
 	}
 	/*
@@ -134,20 +139,33 @@ public class CommonOperations {
 	 * After that put the method name and imageList to tcImageList
 	 */
 	private static void createTestCaseList() {
-		if (TestBase.tcImageList.size() == 0) {
-			TestBase.imageList = new ArrayList<String>();
-			TestBase.imageList.add(TestBase.imageName);
-			TestBase.tcImageList.put(TestBase.methodName, TestBase.imageList);
-		} else {
-			if (TestBase.tcImageList.containsKey(TestBase.methodName)) {
-				TestBase.tcImageList.get(TestBase.methodName).add(TestBase.imageName);
-			} else {
-				TestBase.imageList = new ArrayList<String>();
-				TestBase.imageList.add(TestBase.imageName);
-				TestBase.tcImageList.put(TestBase.methodName, TestBase.imageList);
+		TCImageResults tcResult = new TCImageResults();
+		if(TestBase.tcImageResultsList.size()==0){
+			TestBase.imageResultList = new ArrayList<TCImageResults>();			
+			tcResult.setTcImage(TestBase.imageName);
+			tcResult.setTcResult(TestBase.testStatus);
+			TestBase.imageResultList.add(tcResult);
+			TestBase.tcImageResultsList.put(TestBase.methodName, TestBase.imageResultList);
+		}
+		else{
+			if(TestBase.tcImageResultsList.containsKey(TestBase.methodName)){
+				tcResult.setTcImage(TestBase.imageName);
+				tcResult.setTcResult(TestBase.testStatus);
+				//TestBase.imageResultList.add(tcResult);
+				TestBase.tcImageResultsList.get(TestBase.methodName).add(tcResult);
+			}
+			else {
+				TestBase.imageResultList = new ArrayList<TCImageResults>();			
+				tcResult.setTcImage(TestBase.imageName);
+				tcResult.setTcResult(TestBase.testStatus);
+				TestBase.imageResultList.add(tcResult);
+				TestBase.tcImageResultsList.put(TestBase.methodName, TestBase.imageResultList);
 			}
 		}
-	}
+		
+		
+		
+	}	
 	//-------------------------------------------------------------------------------
 	/*
 	 *  Verify Element Present
@@ -171,5 +189,22 @@ public class CommonOperations {
 		{
 			theDir.mkdir();
 		}
+	} 
+	/*
+	 * get test result of each test method
+	 */
+	public static String getMethodTestResult(ITestResult testResult){
+		int resultCode = testResult.getStatus();
+		if(resultCode==1){
+			TestBase.testStatus="pass";
+		}
+		else if (resultCode==2){
+			TestBase.testStatus="fail";
+		}
+		else if (resultCode==3){
+			TestBase.testStatus="skip";
+		}
+		return TestBase.testStatus;
 	}
+	
 }

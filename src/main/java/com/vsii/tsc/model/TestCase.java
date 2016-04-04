@@ -5,8 +5,10 @@ import java.util.List;
 public class TestCase {
 	private String tcID;
 	private String tcDesc;
+	private String tcPrec;
 	private String tcStep;
-	private List<String> tcImage;
+	private String tcExpt;
+	private List<TCImageResults> tcImageResults;
 	
 	public String getTcID() {
 		return tcID;
@@ -20,18 +22,36 @@ public class TestCase {
 	public void setTcDesc(String tcDesc) {
 		this.tcDesc = tcDesc;
 	}
+	public String getTcPrec() {
+		return tcPrec;
+	}
+	public void setTcPrec(String tcPrec) {
+		this.tcPrec = tcPrec;
+	}
 	public String getTcStep() {
 		return tcStep;
 	}
 	public void setTcStep(String tcStep) {
 		this.tcStep = tcStep;
 	}
-	public List<String> getTcImage() {
-		return tcImage;
+	public String getTcExpt() {
+		return tcExpt;
 	}
-	public void setTcImage(List<String> tcImage) {
-		this.tcImage = tcImage;
+	public void setTcExpt(String tcExpt) {
+		this.tcExpt = tcExpt;
 	}
+	public List<TCImageResults> getTcImageResults() {
+		return tcImageResults;
+	}
+	public void setTcImageResults(List<TCImageResults> tcImageResults) {
+		this.tcImageResults = tcImageResults;
+	}
+	
+	
+	
+
+	
+	
 	
 
 }

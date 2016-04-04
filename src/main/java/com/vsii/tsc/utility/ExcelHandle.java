@@ -23,6 +23,8 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+import com.vsii.tsc.model.TestCase;
+
 public class ExcelHandle {
 
 	static FileInputStream file;
@@ -34,9 +36,11 @@ public class ExcelHandle {
 	// Use for writeTestResults() method
 	public static ArrayList<String> tcIDList;
 	public static ArrayList<String> tcDescList;
+	public static ArrayList<String> tcPreconList;
 	public static ArrayList<String> tcStepList;
+	public static ArrayList<String> tcExptList;
 	public static HashMap<String, String> testcaseList;
-	
+
 	// -----------------------------------------------------------------------------------------------------------------------------
 	/*
 	 * Read data from table in excel file
@@ -157,7 +161,7 @@ public class ExcelHandle {
 	/*
 	 * Open excel file by filepath, sheet name, index of TC's ID, TC's Description and TC's steps
 	 */
-	public static void openExcelFile(String filePath, String sheetName, int tcIDCol, int tcDescCol, int tcStepCol)
+	public static void openExcelFile(String filePath, String sheetName, int tcIDCol, int tcDescCol,int tcPreCol, int tcStepCol, int tcExptCol)
 			throws IOException {
 		file = new FileInputStream(new File(filePath));
 		workbook = new XSSFWorkbook(file);
@@ -168,63 +172,54 @@ public class ExcelHandle {
 		// list of test case name
 		tcIDList = (ArrayList<String>) ExcelHandle.loadCellValueList(sheetName, tcIDCol);
 		tcDescList = (ArrayList<String>) ExcelHandle.loadCellValueList(sheetName, tcDescCol);
+		tcPreconList= (ArrayList<String>) ExcelHandle.loadCellValueList(sheetName, tcPreCol);
 		tcStepList = (ArrayList<String>) ExcelHandle.loadCellValueList(sheetName, tcStepCol);
-
+		tcExptList = (ArrayList<String>) ExcelHandle.loadCellValueList(sheetName, tcExptCol);
+		file.close();
 	}
 
 	// -------------------------------------------------------------------------------------------------------------------------------
-	/*
-	 * Write results to excel
-	 */
-	public static void writeTestResults(String caseName, int writtenCol, String testResult) throws IOException {
-		String cellColor = "";
-
-		for (String cellContent : tcIDList) {
-			// If find the test case ID equal to the name of test method, fill
-			// the test results.
-			if (cellContent.equalsIgnoreCase(caseName)) {
-				System.out.println(cellContent);
-				int rowNum;
-				int colNum;
-				int newColNum;
-				for (Row row : sheet) {
-					for (Cell cell : row) {
-						if (cell.getCellType() == Cell.CELL_TYPE_STRING) {
-							if (cell.getRichStringCellValue().getString().trim().equals(cellContent)) {
-								// cell.setCellValue("Passed");
-								rowNum = row.getRowNum();
-								colNum = cell.getColumnIndex();
-								newColNum = colNum + writtenCol;
-
-								// Change cell color
-								/* Get access to XSSFCellStyle */
-								XSSFCellStyle myStyle = workbook.createCellStyle();
-								/*
-								 * We will now specify a background cell color
-								 */
-
-								myStyle.setFillPattern(CellStyle.SOLID_FOREGROUND);
-								myStyle.setBorderTop((short)1);
-								myStyle.setBorderBottom((short)1);
-								myStyle.setBorderLeft((short)1);
-								myStyle.setBorderRight((short)1);
-
-								if (testResult.equals("Passed")) {
-									myStyle.setFillForegroundColor(IndexedColors.GREEN.getIndex());
-								} else if (testResult.endsWith("Failed")) {
-									myStyle.setFillForegroundColor(IndexedColors.RED.getIndex());
-								}
-
-								sheet.getRow(rowNum).getCell(newColNum).setCellStyle(myStyle);
-								sheet.getRow(rowNum).getCell(newColNum).setCellValue(testResult);
-							}
-						}
-					}
-				}
-			}
-		}
-
-	}
+//	/*
+//	 * Write results to excel
+//	 */
+//	public static void writeTestResults(List<TestCase> tcTempleTable) throws IOException {
+//		String cellColor = "";
+//		int rowNum = Integer.parseInt(TestBase.p.getProperty("resultRow"));
+//		int resultIDCol = Integer.parseInt(TestBase.p.getProperty("resultIDCol"));
+//		int resultDesCol = Integer.parseInt(TestBase.p.getProperty("resultDesCol"));
+//		int resultPreCol = Integer.parseInt(TestBase.p.getProperty("resultPreCol"));
+//		int resultStepCol = Integer.parseInt(TestBase.p.getProperty("resultStepCol"));
+//		int resultExptCol = Integer.parseInt(TestBase.p.getProperty("resultExptCol"));
+//		int resultTestCol = Integer.parseInt(TestBase.p.getProperty("resultTestCol"));
+//		
+//			// Change cell color
+//			/* Get access to XSSFCellStyle */
+//			XSSFCellStyle myStyle = workbook.createCellStyle();
+//			/*
+//			 * We will now specify a background cell color
+//		     */
+//
+//			myStyle.setFillPattern(CellStyle.SOLID_FOREGROUND);
+//			myStyle.setBorderTop((short)1);
+//			myStyle.setBorderBottom((short)1);
+//			myStyle.setBorderLeft((short)1);
+//			myStyle.setBorderRight((short)1);
+//			
+//			for
+//
+//			if (testResult.equals("Passed")) {
+//				myStyle.setFillForegroundColor(IndexedColors.GREEN.getIndex());
+//			} else if (testResult.endsWith("Failed")) {
+//				myStyle.setFillForegroundColor(IndexedColors.RED.getIndex());
+//			}
+//
+//			sheet.getRow(rowNum).getCell(newColNum).setCellStyle(myStyle);
+//			sheet.getRow(rowNum).getCell(newColNum).setCellValue(testResult);
+//									
+//								
+//								
+//		}
+//	}
 
 	// -----------------------------------------------------------------------------------------------------------------------------
 	/*

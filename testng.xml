@@ -10,11 +10,11 @@
   <class name="com.vsii.tsc.guru.testcase.Login"/> 
     </classes>
     </test>
-    <test name="CreateNewCustomer" preserve-order="true">
-    <classes>
-      	<class name="com.vsii.tsc.guru.testcase.NewCustomer"/>
-    </classes>
-    </test>
+<!--     <test name="CreateNewCustomer" preserve-order="true"> -->
+<!--     <classes> -->
+<!--       	<class name="com.vsii.tsc.guru.testcase.NewCustomer"/> -->
+<!--     </classes> -->
+<!--     </test> -->
 <!--         <test name="EditCustomer" preserve-order="true"> -->
 <!--     <classes>	 -->
 <!--        <class name="com.vsii.tsc.guru.testcase.EditCustomer"/>  -->
