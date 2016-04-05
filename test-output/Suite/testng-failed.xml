@@ -2,16 +2,10 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
   <listeners>
-    <listener class-name="com.vsii.tsc.utility.ExtentReporterNG"/>
+    <listener class-name="com.vsii.tsc.utility.Reports"/>
   </listeners>
   <test name="Login(failed)">
     <classes>
-      <class name="com.vsii.tsc.utility.TestBase">
-        <methods>
-          <include name="teardownSuite"/>
-          <include name="setupSuite"/>
-        </methods>
-      </class> <!-- com.vsii.tsc.utility.TestBase -->
       <class name="com.vsii.tsc.guru.testcase.Login">
         <methods>
           <include name="afterMethod"/>
@@ -21,6 +15,12 @@
           <include name="LO02" invocation-numbers="3 4 6"/>
         </methods>
       </class> <!-- com.vsii.tsc.guru.testcase.Login -->
+      <class name="com.vsii.tsc.utility.TestBase">
+        <methods>
+          <include name="teardownSuite"/>
+          <include name="setupSuite"/>
+        </methods>
+      </class> <!-- com.vsii.tsc.utility.TestBase -->
     </classes>
   </test> <!-- Login(failed) -->
 </suite> <!-- Failed suite [Suite] -->

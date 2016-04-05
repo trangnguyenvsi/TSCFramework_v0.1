@@ -214,13 +214,13 @@
                   <span class="method-name">LO02</span>
                   <span class="parameters">(mngr22018, , Password must not be blank)</span>
                   <div class="stack-trace">org.openqa.selenium.NoSuchElementException: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;html/body/table/tbody/tr/td/table/tbody/tr[3]/td&quot;}
-Command duration or timeout: 26 milliseconds
+Command duration or timeout: 20 milliseconds
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;2.52.0&apos;, revision: &apos;4c2593cfc3689a7fcd7be52549167e5ccc93ad28&apos;, time: &apos;2016-02-11 11:22:43&apos;
 System info: host: &apos;trangntt-w7&apos;, ip: &apos;192.168.100.30&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_25&apos;
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
 Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=45.0.1, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: 6b305064-4a49-4228-a1ea-10382a3ffb8b
+Session ID: 8eb13a1e-8fb9-4f7b-92ee-37081be3b237
 *** Element info: {Using=xpath, value=html/body/table/tbody/tr/td/table/tbody/tr[3]/td}
 	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
 	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
@@ -239,11 +239,11 @@ For documentation on this error, please visit: http://seleniumhq.org/exceptions/
 Build info: version: &apos;2.52.0&apos;, revision: &apos;4c2593cfc3689a7fcd7be52549167e5ccc93ad28&apos;, time: &apos;2016-02-11 11:22:43&apos;
 System info: host: &apos;trangntt-w7&apos;, ip: &apos;192.168.100.30&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_25&apos;
 Driver info: driver.version: unknown
-	at &lt;anonymous class&gt;.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/trangntt/AppData/Local/Temp/anonymous5624001771335467974webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10723)
-	at &lt;anonymous class&gt;.FirefoxDriver.prototype.findElement(file:///C:/Users/trangntt/AppData/Local/Temp/anonymous5624001771335467974webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10732)
-	at &lt;anonymous class&gt;.DelayedCommand.prototype.executeInternal_/h(file:///C:/Users/trangntt/AppData/Local/Temp/anonymous5624001771335467974webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12614)
-	at &lt;anonymous class&gt;.DelayedCommand.prototype.executeInternal_(file:///C:/Users/trangntt/AppData/Local/Temp/anonymous5624001771335467974webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12619)
-	at &lt;anonymous class&gt;.DelayedCommand.prototype.execute/&lt;(file:///C:/Users/trangntt/AppData/Local/Temp/anonymous5624001771335467974webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12561)
+	at &lt;anonymous class&gt;.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/trangntt/AppData/Local/Temp/anonymous3577136030947812500webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10723)
+	at &lt;anonymous class&gt;.FirefoxDriver.prototype.findElement(file:///C:/Users/trangntt/AppData/Local/Temp/anonymous3577136030947812500webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10732)
+	at &lt;anonymous class&gt;.DelayedCommand.prototype.executeInternal_/h(file:///C:/Users/trangntt/AppData/Local/Temp/anonymous3577136030947812500webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12614)
+	at &lt;anonymous class&gt;.DelayedCommand.prototype.executeInternal_(file:///C:/Users/trangntt/AppData/Local/Temp/anonymous3577136030947812500webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12619)
+	at &lt;anonymous class&gt;.DelayedCommand.prototype.execute/&lt;(file:///C:/Users/trangntt/AppData/Local/Temp/anonymous3577136030947812500webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12561)
 ... Removed 28 stack frames
 </div> <!-- stack-trace -->
                   <em>
@@ -311,7 +311,7 @@ Driver info: driver.version: unknown
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Suite&quot;&gt;
   &lt;listeners&gt;
-    &lt;listener class-name=&quot;com.vsii.tsc.utility.ExtentReporterNG&quot;/&gt;
+    &lt;listener class-name=&quot;com.vsii.tsc.utility.Reports&quot;/&gt;
   &lt;/listeners&gt;
   &lt;test name=&quot;Login&quot;&gt;
     &lt;classes&gt;
@@ -360,35 +360,35 @@ data.addRows(8);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'LO02')
 data.setCell(0, 2, 'com.vsii.tsc.guru.testcase.Login')
-data.setCell(0, 3, 3389);
+data.setCell(0, 3, 3560);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'LO02')
 data.setCell(1, 2, 'com.vsii.tsc.guru.testcase.Login')
-data.setCell(1, 3, 2283);
+data.setCell(1, 3, 2188);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'LO02')
 data.setCell(2, 2, 'com.vsii.tsc.guru.testcase.Login')
-data.setCell(2, 3, 2221);
+data.setCell(2, 3, 2182);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'LO02')
 data.setCell(3, 2, 'com.vsii.tsc.guru.testcase.Login')
-data.setCell(3, 3, 2132);
+data.setCell(3, 3, 2147);
 data.setCell(4, 0, 4)
 data.setCell(4, 1, 'LO02')
 data.setCell(4, 2, 'com.vsii.tsc.guru.testcase.Login')
-data.setCell(4, 3, 1904);
+data.setCell(4, 3, 1930);
 data.setCell(5, 0, 5)
 data.setCell(5, 1, 'LO02')
 data.setCell(5, 2, 'com.vsii.tsc.guru.testcase.Login')
-data.setCell(5, 3, 1892);
+data.setCell(5, 3, 1785);
 data.setCell(6, 0, 6)
 data.setCell(6, 1, 'LO02')
 data.setCell(6, 2, 'com.vsii.tsc.guru.testcase.Login')
-data.setCell(6, 3, 1651);
+data.setCell(6, 3, 1704);
 data.setCell(7, 0, 7)
 data.setCell(7, 1, 'LO01')
 data.setCell(7, 2, 'com.vsii.tsc.guru.testcase.Login')
-data.setCell(7, 3, 150);
+data.setCell(7, 3, 118);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
@@ -429,90 +429,90 @@ return data;
               <div class="chronological-class-name">com.vsii.tsc.guru.testcase.Login</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setupClass</span>
-                <span class="method-start">7421 ms</span>
+                <span class="method-start">7841 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">LO01</span>
-                <span class="method-start">7450 ms</span>
+                <span class="method-start">7890 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">afterMethod([TestResult name=LO01 status=FAILURE method=Login.LO01()[pri:0, instance:com.vsii.tsc.guru.testcase....)</span>
-                <span class="method-start">7603 ms</span>
+                <span class="method-start">8012 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">LO02(Tester01, nAgezam , User or Password is not valid)</span>
-                <span class="method-start">10657 ms</span>
+                <span class="method-start">11221 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">afterMethod([TestResult name=LO02 status=SUCCESS method=Login.LO02(java.lang.String, java.lang.String, java.lang...)</span>
-                <span class="method-start">12308 ms</span>
+                <span class="method-start">13008 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">LO02(mngr22018, 123456, User or Password is not valid)</span>
-                <span class="method-start">12801 ms</span>
+                <span class="method-start">13510 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">afterMethod([TestResult name=LO02 status=SUCCESS method=Login.LO02(java.lang.String, java.lang.String, java.lang...)</span>
-                <span class="method-start">14705 ms</span>
+                <span class="method-start">15693 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">LO02(Tester02, 123456, User or Password is not valid)</span>
-                <span class="method-start">15008 ms</span>
+                <span class="method-start">15994 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">afterMethod([TestResult name=LO02 status=SUCCESS method=Login.LO02(java.lang.String, java.lang.String, java.lang...)</span>
-                <span class="method-start">17230 ms</span>
+                <span class="method-start">17925 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">LO02(, nAgezam , User-ID must not be blank)</span>
-                <span class="method-start">17501 ms</span>
+                <span class="method-start">18231 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">afterMethod([TestResult name=LO02 status=FAILURE method=Login.LO02(java.lang.String, java.lang.String, java.lang...)</span>
-                <span class="method-start">19636 ms</span>
+                <span class="method-start">20419 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">LO02(mngr22018, , Password must not be blank)</span>
-                <span class="method-start">19870 ms</span>
+                <span class="method-start">20651 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">afterMethod([TestResult name=LO02 status=FAILURE method=Login.LO02(java.lang.String, java.lang.String, java.lang...)</span>
-                <span class="method-start">23266 ms</span>
+                <span class="method-start">24221 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">LO02( ,  , User or Password is not valid)</span>
-                <span class="method-start">25526 ms</span>
+                <span class="method-start">26551 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">afterMethod([TestResult name=LO02 status=SUCCESS method=Login.LO02(java.lang.String, java.lang.String, java.lang...)</span>
-                <span class="method-start">27419 ms</span>
+                <span class="method-start">28255 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">LO02(mngr22018, nAgezam , Manger Id : mngr22018)</span>
-                <span class="method-start">27643 ms</span>
+                <span class="method-start">28505 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">afterMethod([TestResult name=LO02 status=FAILURE method=Login.LO02(java.lang.String, java.lang.String, java.lang...)</span>
-                <span class="method-start">29927 ms</span>
+                <span class="method-start">30652 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">teardownClass</span>
-                <span class="method-start">30160 ms</span>
+                <span class="method-start">30914 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.vsii.tsc.utility.TestBase</div> <!-- chronological-class-name -->
               <div class="configuration-suite after">
                 <span class="method-name">teardownSuite</span>
-                <span class="method-start">30207 ms</span>
+                <span class="method-start">30954 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
