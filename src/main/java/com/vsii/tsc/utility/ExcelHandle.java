@@ -275,23 +275,13 @@ public class ExcelHandle {
 		int resultStepCol = Integer.parseInt(TestBase.p.getProperty("resultStepCol"));
 		int resultExptCol = Integer.parseInt(TestBase.p.getProperty("resultExptCol"));
 		int resultTestCol = Integer.parseInt(TestBase.p.getProperty("resultTestCol"));
-		/* Get access to XSSFCellStyle */
-		XSSFCellStyle myStyle = workbook.createCellStyle();
-		/*
-		 * We will now specify a background cell color
-		 */
-		myStyle.setFillPattern(CellStyle.SOLID_FOREGROUND);
-		myStyle.setBorderTop((short) 1);
-		myStyle.setBorderBottom((short) 1);
-		myStyle.setBorderLeft((short) 1);
-		myStyle.setBorderRight((short) 1);
 		int rowTC = 0;
 		int j = 0;
 		for (TestCase tc : tcTemple) {
 			System.out.println("tc size:" + tcTemple.size());
 			System.out.println("size:" + tc.getTcImageResults().size());
 			int i;
-			rowTC = rowNum;
+			rowTC = rowNum;	
 			for (i = 0; i < tc.getTcImageResults().size(); i++) {
 
 				ExcelHandle.sheet.getRow(rowNum).getCell(resultIDCol).setCellValue(tc.getTcID());
@@ -308,18 +298,38 @@ public class ExcelHandle {
 				System.out.println("TC Results:" + tc.getTcImageResults().get(i).getTcResult());
 
 				String result = tc.getTcImageResults().get(i).getTcResult().toString();
-				if (result.equals("pass")) {
+				/* Get access to XSSFCellStyle */
+				XSSFCellStyle myStyle = workbook.createCellStyle();
+				/*
+				 * We will now specify a background cell color
+				 */
+				myStyle.setFillPattern(CellStyle.SOLID_FOREGROUND);
+				myStyle.setBorderTop((short) 1);
+				myStyle.setBorderBottom((short) 1);
+				myStyle.setBorderLeft((short) 1);
+				myStyle.setBorderRight((short) 1);
+				
+				switch (result) {
+				
+				case "pass":
 					myStyle.setFillForegroundColor(IndexedColors.GREEN.getIndex());
-				} else if (result.equals("fail")) {
+					break;
+				case "fail":
 					myStyle.setFillForegroundColor(IndexedColors.RED.getIndex());
+					break;
+				default:
+					myStyle.setFillForegroundColor(IndexedColors.YELLOW.getIndex());
+					break;
 				}
-				ExcelHandle.sheet.getRow(rowNum).getCell(resultTestCol).setCellStyle(myStyle);
-				ExcelHandle.sheet.getRow(rowNum).getCell(resultTestCol).setCellValue(result.toUpperCase() + "ED");
+				sheet.getRow(rowNum).getCell(resultTestCol).setCellStyle(myStyle);
+				sheet.getRow(rowNum).getCell(resultTestCol).setCellValue(result.toUpperCase() + "ED");
 				rowNum++;
 			}
-			if (tc.getTcImageResults().size() > 1) {
+			if (tc.getTcImageResults().size() > 1) 
+			{
 				j = rowTC + i - 1;
 			}
+			
 		}
 		/* Merge cell */
 		CellRangeAddress mergeID = new CellRangeAddress(rowTC, j, resultIDCol, resultIDCol);
