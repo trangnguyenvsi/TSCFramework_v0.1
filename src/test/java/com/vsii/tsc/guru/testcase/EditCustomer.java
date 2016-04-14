@@ -3,6 +3,7 @@ package com.vsii.tsc.guru.testcase;
 import java.io.IOException;
 
 import org.testng.Assert;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -67,7 +68,8 @@ public class EditCustomer {
 	}
 
 	@AfterMethod
-	public void after() throws Exception {
+	public void afterMethod(ITestResult testResult) throws Exception {
+		CommonOperations.getMethodTestResult(testResult);
 		CommonOperations.takePicture();
 	}
 

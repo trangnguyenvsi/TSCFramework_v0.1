@@ -21,6 +21,37 @@
           <include name="setupSuite"/>
         </methods>
       </class> <!-- com.vsii.tsc.utility.TestBase -->
+      <class name="com.vsii.tsc.guru.testcase.NewCustomer">
+        <methods>
+          <include name="afterMethod"/>
+          <include name="setupClass"/>
+        </methods>
+      </class> <!-- com.vsii.tsc.guru.testcase.NewCustomer -->
     </classes>
   </test> <!-- Login(failed) -->
+  <test name="CreateNewCustomer(failed)">
+    <classes>
+      <class name="com.vsii.tsc.guru.testcase.Login">
+        <methods>
+          <include name="afterMethod"/>
+          <include name="teardownClass"/>
+          <include name="setupClass"/>
+        </methods>
+      </class> <!-- com.vsii.tsc.guru.testcase.Login -->
+      <class name="com.vsii.tsc.utility.TestBase">
+        <methods>
+          <include name="teardownSuite"/>
+          <include name="setupSuite"/>
+        </methods>
+      </class> <!-- com.vsii.tsc.utility.TestBase -->
+      <class name="com.vsii.tsc.guru.testcase.NewCustomer">
+        <methods>
+          <include name="CN02" invocation-numbers="0"/>
+          <include name="afterMethod"/>
+          <include name="setupClass"/>
+          <include name="CN03" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.vsii.tsc.guru.testcase.NewCustomer -->
+    </classes>
+  </test> <!-- CreateNewCustomer(failed) -->
 </suite> <!-- Failed suite [Suite] -->

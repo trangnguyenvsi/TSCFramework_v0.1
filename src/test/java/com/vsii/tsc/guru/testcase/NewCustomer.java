@@ -2,6 +2,7 @@ package com.vsii.tsc.guru.testcase;
 
 
 import org.testng.Assert;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -66,9 +67,10 @@ public class NewCustomer{
 		
 	}
 	
-	@AfterMethod
-	public void afterMethod() throws Exception{
-		CommonOperations.takePicture();
-	}
+		@AfterMethod
+		public void afterMethod(ITestResult testResult) throws Exception {
+			CommonOperations.getMethodTestResult(testResult);
+			CommonOperations.takePicture();
+		}
 
 }

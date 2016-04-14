@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="4" total="8" passed="4">
+<testng-results skipped="0" failed="6" total="11" passed="5">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="23082" started-at="2016-04-05T06:47:07Z" finished-at="2016-04-05T06:47:30Z">
+  <suite name="Suite" duration-ms="39555" started-at="2016-04-14T01:26:33Z" finished-at="2016-04-14T01:27:13Z">
     <groups>
     </groups>
-    <test name="Login" duration-ms="23082" started-at="2016-04-05T06:47:07Z" finished-at="2016-04-05T06:47:30Z">
+    <test name="Login" duration-ms="23800" started-at="2016-04-14T01:26:33Z" finished-at="2016-04-14T01:26:57Z">
       <class name="com.vsii.tsc.guru.testcase.Login">
-        <test-method status="PASS" signature="setupClass()[pri:0, instance:com.vsii.tsc.guru.testcase.Login@5ebec15]" name="setupClass" is-config="true" duration-ms="42" started-at="2016-04-05T13:47:07Z" finished-at="2016-04-05T13:47:07Z">
+        <test-method status="PASS" signature="setupClass()[pri:0, instance:com.vsii.tsc.guru.testcase.Login@5ebec15]" name="setupClass" is-config="true" duration-ms="27" started-at="2016-04-14T08:26:33Z" finished-at="2016-04-14T08:26:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupClass -->
-        <test-method status="FAIL" signature="LO01()[pri:0, instance:com.vsii.tsc.guru.testcase.Login@5ebec15]" name="LO01" duration-ms="118" started-at="2016-04-05T13:47:07Z" description="Verify Title of Login Page" finished-at="2016-04-05T13:47:07Z">
+        <test-method status="FAIL" signature="LO01()[pri:0, instance:com.vsii.tsc.guru.testcase.Login@5ebec15]" name="LO01" duration-ms="150" started-at="2016-04-14T08:26:33Z" description="Verify Title of Login Page" finished-at="2016-04-14T08:26:33Z">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[expected [true] but found [false]]]>
@@ -53,7 +53,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LO01 -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vsii.tsc.guru.testcase.Login@5ebec15]" name="afterMethod" is-config="true" duration-ms="2316" started-at="2016-04-05T13:47:07Z" finished-at="2016-04-05T13:47:09Z">
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vsii.tsc.guru.testcase.Login@5ebec15]" name="afterMethod" is-config="true" duration-ms="2304" started-at="2016-04-14T08:26:33Z" finished-at="2016-04-14T08:26:36Z">
           <params>
             <param index="0">
               <value>
@@ -64,7 +64,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="LO02(java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.vsii.tsc.guru.testcase.Login@5ebec15]" name="LO02" duration-ms="1785" started-at="2016-04-05T13:47:10Z" description="verify Login" data-provider="dpLogin" finished-at="2016-04-05T13:47:12Z">
+        <test-method status="PASS" signature="LO02(java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.vsii.tsc.guru.testcase.Login@5ebec15]" name="LO02" duration-ms="1976" started-at="2016-04-14T08:26:36Z" description="verify Login" data-provider="dpLogin" finished-at="2016-04-14T08:26:38Z">
           <params>
             <param index="0">
               <value>
@@ -85,7 +85,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LO02 -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vsii.tsc.guru.testcase.Login@5ebec15]" name="afterMethod" is-config="true" duration-ms="502" started-at="2016-04-05T13:47:12Z" finished-at="2016-04-05T13:47:12Z">
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vsii.tsc.guru.testcase.Login@5ebec15]" name="afterMethod" is-config="true" duration-ms="595" started-at="2016-04-14T08:26:38Z" finished-at="2016-04-14T08:26:39Z">
           <params>
             <param index="0">
               <value>
@@ -96,7 +96,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="LO02(java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.vsii.tsc.guru.testcase.Login@5ebec15]" name="LO02" duration-ms="2182" started-at="2016-04-05T13:47:12Z" description="verify Login" data-provider="dpLogin" finished-at="2016-04-05T13:47:15Z">
+        <test-method status="PASS" signature="LO02(java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.vsii.tsc.guru.testcase.Login@5ebec15]" name="LO02" duration-ms="2001" started-at="2016-04-14T08:26:39Z" description="verify Login" data-provider="dpLogin" finished-at="2016-04-14T08:26:41Z">
           <params>
             <param index="0">
               <value>
@@ -117,7 +117,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LO02 -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vsii.tsc.guru.testcase.Login@5ebec15]" name="afterMethod" is-config="true" duration-ms="301" started-at="2016-04-05T13:47:15Z" finished-at="2016-04-05T13:47:15Z">
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vsii.tsc.guru.testcase.Login@5ebec15]" name="afterMethod" is-config="true" duration-ms="292" started-at="2016-04-14T08:26:41Z" finished-at="2016-04-14T08:26:41Z">
           <params>
             <param index="0">
               <value>
@@ -128,7 +128,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="LO02(java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.vsii.tsc.guru.testcase.Login@5ebec15]" name="LO02" duration-ms="1930" started-at="2016-04-05T13:47:15Z" description="verify Login" data-provider="dpLogin" finished-at="2016-04-05T13:47:17Z">
+        <test-method status="PASS" signature="LO02(java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.vsii.tsc.guru.testcase.Login@5ebec15]" name="LO02" duration-ms="2328" started-at="2016-04-14T08:26:41Z" description="verify Login" data-provider="dpLogin" finished-at="2016-04-14T08:26:44Z">
           <params>
             <param index="0">
               <value>
@@ -149,7 +149,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LO02 -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vsii.tsc.guru.testcase.Login@5ebec15]" name="afterMethod" is-config="true" duration-ms="306" started-at="2016-04-05T13:47:17Z" finished-at="2016-04-05T13:47:17Z">
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vsii.tsc.guru.testcase.Login@5ebec15]" name="afterMethod" is-config="true" duration-ms="293" started-at="2016-04-14T08:26:44Z" finished-at="2016-04-14T08:26:44Z">
           <params>
             <param index="0">
               <value>
@@ -160,7 +160,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="FAIL" signature="LO02(java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.vsii.tsc.guru.testcase.Login@5ebec15]" name="LO02" duration-ms="2188" started-at="2016-04-05T13:47:17Z" description="verify Login" data-provider="dpLogin" finished-at="2016-04-05T13:47:19Z">
+        <test-method status="FAIL" signature="LO02(java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.vsii.tsc.guru.testcase.Login@5ebec15]" name="LO02" duration-ms="2108" started-at="2016-04-14T08:26:44Z" description="verify Login" data-provider="dpLogin" finished-at="2016-04-14T08:26:46Z">
           <params>
             <param index="0">
               <value>
@@ -219,7 +219,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LO02 -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vsii.tsc.guru.testcase.Login@5ebec15]" name="afterMethod" is-config="true" duration-ms="232" started-at="2016-04-05T13:47:19Z" finished-at="2016-04-05T13:47:20Z">
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vsii.tsc.guru.testcase.Login@5ebec15]" name="afterMethod" is-config="true" duration-ms="272" started-at="2016-04-14T08:26:46Z" finished-at="2016-04-14T08:26:46Z">
           <params>
             <param index="0">
               <value>
@@ -230,7 +230,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="FAIL" signature="LO02(java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.vsii.tsc.guru.testcase.Login@5ebec15]" name="LO02" duration-ms="3560" started-at="2016-04-05T13:47:20Z" description="verify Login" data-provider="dpLogin" finished-at="2016-04-05T13:47:23Z">
+        <test-method status="FAIL" signature="LO02(java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.vsii.tsc.guru.testcase.Login@5ebec15]" name="LO02" duration-ms="3477" started-at="2016-04-14T08:26:46Z" description="verify Login" data-provider="dpLogin" finished-at="2016-04-14T08:26:50Z">
           <params>
             <param index="0">
               <value>
@@ -251,24 +251,24 @@
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
               <![CDATA[Unable to locate element: {"method":"xpath","selector":"html/body/table/tbody/tr/td/table/tbody/tr[3]/td"}
-Command duration or timeout: 20 milliseconds
+Command duration or timeout: 22 milliseconds
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
 System info: host: 'trangntt-w7', ip: '192.168.100.30', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_25'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=45.0.1, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: 8eb13a1e-8fb9-4f7b-92ee-37081be3b237
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=45.0.2, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: dc6b1602-34fc-47ba-9b98-d4d8c649006a
 *** Element info: {Using=xpath, value=html/body/table/tbody/tr/td/table/tbody/tr[3]/td}]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"xpath","selector":"html/body/table/tbody/tr/td/table/tbody/tr[3]/td"}
-Command duration or timeout: 20 milliseconds
+Command duration or timeout: 22 milliseconds
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
 System info: host: 'trangntt-w7', ip: '192.168.100.30', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_25'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=45.0.1, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: 8eb13a1e-8fb9-4f7b-92ee-37081be3b237
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=45.0.2, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: dc6b1602-34fc-47ba-9b98-d4d8c649006a
 *** Element info: {Using=xpath, value=html/body/table/tbody/tr/td/table/tbody/tr[3]/td}
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
@@ -315,18 +315,18 @@ For documentation on this error, please visit: http://seleniumhq.org/exceptions/
 Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
 System info: host: 'trangntt-w7', ip: '192.168.100.30', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_25'
 Driver info: driver.version: unknown
-	at <anonymous class>.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/trangntt/AppData/Local/Temp/anonymous3577136030947812500webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10723)
-	at <anonymous class>.FirefoxDriver.prototype.findElement(file:///C:/Users/trangntt/AppData/Local/Temp/anonymous3577136030947812500webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10732)
-	at <anonymous class>.DelayedCommand.prototype.executeInternal_/h(file:///C:/Users/trangntt/AppData/Local/Temp/anonymous3577136030947812500webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12614)
-	at <anonymous class>.DelayedCommand.prototype.executeInternal_(file:///C:/Users/trangntt/AppData/Local/Temp/anonymous3577136030947812500webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12619)
-	at <anonymous class>.DelayedCommand.prototype.execute/<(file:///C:/Users/trangntt/AppData/Local/Temp/anonymous3577136030947812500webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12561)
+	at <anonymous class>.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/trangntt/AppData/Local/Temp/anonymous9010645015664873072webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10723)
+	at <anonymous class>.FirefoxDriver.prototype.findElement(file:///C:/Users/trangntt/AppData/Local/Temp/anonymous9010645015664873072webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10732)
+	at <anonymous class>.DelayedCommand.prototype.executeInternal_/h(file:///C:/Users/trangntt/AppData/Local/Temp/anonymous9010645015664873072webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12614)
+	at <anonymous class>.DelayedCommand.prototype.executeInternal_(file:///C:/Users/trangntt/AppData/Local/Temp/anonymous9010645015664873072webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12619)
+	at <anonymous class>.DelayedCommand.prototype.execute/<(file:///C:/Users/trangntt/AppData/Local/Temp/anonymous9010645015664873072webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12561)
 ]]>
             </full-stacktrace>
           </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LO02 -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vsii.tsc.guru.testcase.Login@5ebec15]" name="afterMethod" is-config="true" duration-ms="2330" started-at="2016-04-05T13:47:23Z" finished-at="2016-04-05T13:47:25Z">
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vsii.tsc.guru.testcase.Login@5ebec15]" name="afterMethod" is-config="true" duration-ms="2269" started-at="2016-04-14T08:26:50Z" finished-at="2016-04-14T08:26:52Z">
           <params>
             <param index="0">
               <value>
@@ -337,7 +337,7 @@ Driver info: driver.version: unknown
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="LO02(java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.vsii.tsc.guru.testcase.Login@5ebec15]" name="LO02" duration-ms="1704" started-at="2016-04-05T13:47:25Z" description="verify Login" data-provider="dpLogin" finished-at="2016-04-05T13:47:27Z">
+        <test-method status="PASS" signature="LO02(java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.vsii.tsc.guru.testcase.Login@5ebec15]" name="LO02" duration-ms="1864" started-at="2016-04-14T08:26:52Z" description="verify Login" data-provider="dpLogin" finished-at="2016-04-14T08:26:54Z">
           <params>
             <param index="0">
               <value>
@@ -358,7 +358,7 @@ Driver info: driver.version: unknown
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LO02 -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vsii.tsc.guru.testcase.Login@5ebec15]" name="afterMethod" is-config="true" duration-ms="250" started-at="2016-04-05T13:47:27Z" finished-at="2016-04-05T13:47:27Z">
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vsii.tsc.guru.testcase.Login@5ebec15]" name="afterMethod" is-config="true" duration-ms="266" started-at="2016-04-14T08:26:54Z" finished-at="2016-04-14T08:26:54Z">
           <params>
             <param index="0">
               <value>
@@ -369,7 +369,7 @@ Driver info: driver.version: unknown
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="FAIL" signature="LO02(java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.vsii.tsc.guru.testcase.Login@5ebec15]" name="LO02" duration-ms="2147" started-at="2016-04-05T13:47:27Z" description="verify Login" data-provider="dpLogin" finished-at="2016-04-05T13:47:30Z">
+        <test-method status="FAIL" signature="LO02(java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.vsii.tsc.guru.testcase.Login@5ebec15]" name="LO02" duration-ms="2315" started-at="2016-04-14T08:26:54Z" description="verify Login" data-provider="dpLogin" finished-at="2016-04-14T08:26:56Z">
           <params>
             <param index="0">
               <value>
@@ -428,7 +428,7 @@ Driver info: driver.version: unknown
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LO02 -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vsii.tsc.guru.testcase.Login@5ebec15]" name="afterMethod" is-config="true" duration-ms="262" started-at="2016-04-05T13:47:30Z" finished-at="2016-04-05T13:47:30Z">
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vsii.tsc.guru.testcase.Login@5ebec15]" name="afterMethod" is-config="true" duration-ms="453" started-at="2016-04-14T08:26:56Z" finished-at="2016-04-14T08:26:57Z">
           <params>
             <param index="0">
               <value>
@@ -439,21 +439,233 @@ Driver info: driver.version: unknown
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="teardownClass()[pri:0, instance:com.vsii.tsc.guru.testcase.Login@5ebec15]" name="teardownClass" is-config="true" duration-ms="0" started-at="2016-04-05T13:47:30Z" finished-at="2016-04-05T13:47:30Z">
+        <test-method status="PASS" signature="teardownClass()[pri:0, instance:com.vsii.tsc.guru.testcase.Login@5ebec15]" name="teardownClass" is-config="true" duration-ms="3" started-at="2016-04-14T08:26:57Z" finished-at="2016-04-14T08:26:57Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardownClass -->
       </class> <!-- com.vsii.tsc.guru.testcase.Login -->
+    </test> <!-- Login -->
+    <test name="CreateNewCustomer" duration-ms="15696" started-at="2016-04-14T01:26:57Z" finished-at="2016-04-14T01:27:13Z">
+      <class name="com.vsii.tsc.guru.testcase.NewCustomer">
+        <test-method status="PASS" signature="setupClass()[pri:0, instance:com.vsii.tsc.guru.testcase.NewCustomer@2ef9b8bc]" name="setupClass" is-config="true" duration-ms="2846" started-at="2016-04-14T08:26:57Z" finished-at="2016-04-14T08:27:00Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupClass -->
+        <test-method status="PASS" signature="CN01()[pri:0, instance:com.vsii.tsc.guru.testcase.NewCustomer@2ef9b8bc]" name="CN01" duration-ms="1221" started-at="2016-04-14T08:27:00Z" description="Verify New Customer link" finished-at="2016-04-14T08:27:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CN01 -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vsii.tsc.guru.testcase.NewCustomer@2ef9b8bc]" name="afterMethod" is-config="true" duration-ms="2261" started-at="2016-04-14T08:27:01Z" finished-at="2016-04-14T08:27:03Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=CN01 status=SUCCESS method=NewCustomer.CN01()[pri:0, instance:com.vsii.tsc.guru.testcase.NewCustomer@2ef9b8bc] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="FAIL" signature="CN02(java.lang.String)[pri:1, instance:com.vsii.tsc.guru.testcase.NewCustomer@2ef9b8bc]" name="CN02" duration-ms="867" started-at="2016-04-14T08:27:03Z" description="Validate Create New Customer form" data-provider="dpValidateCustomer" finished-at="2016-04-14T08:27:04Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Customer name must not be blank
+Date Field must not be blank
+Address Field must not be blank
+City Field must not be blank
+State must not be blank
+PIN Code must not be blank
+Mobile no must not be blank
+Email-ID must not be blank
+Password must not be blank]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:496)
+	at org.testng.Assert.assertTrue(Assert.java:42)
+	at org.testng.Assert.assertTrue(Assert.java:52)
+	at com.vsii.tsc.guru.testcase.NewCustomer.CN02(NewCustomer.java:47)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:112)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:205)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:176)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CN02 -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vsii.tsc.guru.testcase.NewCustomer@2ef9b8bc]" name="afterMethod" is-config="true" duration-ms="2271" started-at="2016-04-14T08:27:04Z" finished-at="2016-04-14T08:27:07Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=CN02 status=FAILURE method=NewCustomer.CN02(java.lang.String)[pri:1, instance:com.vsii.tsc.guru.testcase.NewCustomer@2ef9b8bc] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="FAIL" signature="CN03(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.vsii.tsc.guru.testcase.NewCustomer@2ef9b8bc]" name="CN03" duration-ms="3837" started-at="2016-04-14T08:27:07Z" description="Verify Add New Customer" data-provider="dpNewCustomer" finished-at="2016-04-14T08:27:10Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[you]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[10-10-1991]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Hanoi]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Hanoi]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Hanoi]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[201365]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[1045]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[you54@gmail.com]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[123456]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[Customer Registered Successfully!!!]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.UnhandledAlertException">
+            <message>
+              <![CDATA[Unexpected modal dialog (text: Email Address Already Exist !!): Email Address Already Exist !!
+Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
+System info: host: 'trangntt-w7', ip: '192.168.100.30', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_25'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=45.0.2, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: dc6b1602-34fc-47ba-9b98-d4d8c649006a]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.UnhandledAlertException: Unexpected modal dialog (text: Email Address Already Exist !!): Email Address Already Exist !!
+Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
+System info: host: 'trangntt-w7', ip: '192.168.100.30', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_25'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=45.0.2, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: dc6b1602-34fc-47ba-9b98-d4d8c649006a
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:408)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.createUnhandledAlertException(ErrorHandler.java:187)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:154)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:701)
+	at org.openqa.selenium.remote.RemoteWebDriver.getPageSource(RemoteWebDriver.java:511)
+	at com.vsii.tsc.guru.testcase.NewCustomer.CN03(NewCustomer.java:66)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:112)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:205)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:176)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.UnhandledAlertException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CN03 -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vsii.tsc.guru.testcase.NewCustomer@2ef9b8bc]" name="afterMethod" is-config="true" duration-ms="2253" started-at="2016-04-14T08:27:10Z" finished-at="2016-04-14T08:27:13Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=CN03 status=FAILURE method=NewCustomer.CN03(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.vsii.tsc.guru.testcase.NewCustomer@2ef9b8bc] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- com.vsii.tsc.guru.testcase.NewCustomer -->
       <class name="com.vsii.tsc.utility.TestBase">
-        <test-method status="PASS" signature="setupSuite()[pri:0, instance:com.vsii.tsc.utility.TestBase@3d8c7aca]" name="setupSuite" is-config="true" duration-ms="7832" started-at="2016-04-05T13:46:59Z" finished-at="2016-04-05T13:47:07Z">
+        <test-method status="PASS" signature="setupSuite()[pri:0, instance:com.vsii.tsc.utility.TestBase@3d8c7aca]" name="setupSuite" is-config="true" duration-ms="8312" started-at="2016-04-14T08:26:25Z" finished-at="2016-04-14T08:26:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupSuite -->
-        <test-method status="PASS" signature="teardownSuite()[pri:0, instance:com.vsii.tsc.utility.TestBase@3d8c7aca]" name="teardownSuite" is-config="true" duration-ms="0" started-at="2016-04-05T13:47:30Z" finished-at="2016-04-05T13:47:30Z">
+        <test-method status="PASS" signature="teardownSuite()[pri:0, instance:com.vsii.tsc.utility.TestBase@3d8c7aca]" name="teardownSuite" is-config="true" duration-ms="0" started-at="2016-04-14T08:27:13Z" finished-at="2016-04-14T08:27:13Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardownSuite -->
       </class> <!-- com.vsii.tsc.utility.TestBase -->
-    </test> <!-- Login -->
+    </test> <!-- CreateNewCustomer -->
   </suite> <!-- Suite -->
 </testng-results>

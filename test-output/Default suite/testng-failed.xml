@@ -3,15 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.vsii.tsc.guru.testcase.Login">
+      <class name="com.vsii.tsc.guru.testcase.NewCustomer">
         <methods>
-          <include name="afterMethod"/>
-          <include name="LO01"/>
-          <include name="LO03"/>
+          <include name="CN01"/>
+          <include name="CN02"/>
           <include name="setupClass"/>
-          <include name="LO02"/>
+          <include name="CN03"/>
         </methods>
-      </class> <!-- com.vsii.tsc.guru.testcase.Login -->
+      </class> <!-- com.vsii.tsc.guru.testcase.NewCustomer -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

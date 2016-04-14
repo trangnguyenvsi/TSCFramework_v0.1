@@ -309,6 +309,7 @@ public class ExcelHandle {
 				myStyle.setBorderLeft((short) 1);
 				myStyle.setBorderRight((short) 1);
 				
+				/* Set cell style*/
 				switch (result) {
 				
 				case "pass":
@@ -328,6 +329,12 @@ public class ExcelHandle {
 			if (tc.getTcImageResults().size() > 1) 
 			{
 				j = rowTC + i - 1;
+			
+			}
+			else if (tc.getTcImageResults().size() == 1)
+			{   
+				j = rowTC;
+				
 			}
 			
 		}
