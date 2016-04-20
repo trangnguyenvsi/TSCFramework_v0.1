@@ -50,7 +50,7 @@ public class Login{
 		}
 	}
 	
-	// @Test(priority = 1, description = "verify_Reset_Button", dataProvider = "dpReset", dataProviderClass = TestData.class)
+	 @Test(priority = 1, description = "verify_Reset_Button", dataProvider = "reset", dataProviderClass = TestData.class)
 	 public void LO03(String username, String password) throws Exception {
 	
 		 //get method's name
