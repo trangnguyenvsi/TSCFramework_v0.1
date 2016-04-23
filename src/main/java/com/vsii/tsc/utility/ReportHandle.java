@@ -71,6 +71,8 @@ public class ReportHandle {
 				test = extentReport.startTest(methodName);
 				test.assignCategory(testName);
 				String message = "Test " + status.toString().toLowerCase() + "ed";
+				if (result.getThrowable() != null)
+					message = result.getThrowable().getMessage();
 		
 				for(TestCase tc:tcList){
 					/* if TCID is equals to method Name, loop in test result*/

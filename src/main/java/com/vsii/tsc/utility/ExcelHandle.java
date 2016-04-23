@@ -331,10 +331,8 @@ public class ExcelHandle {
 				j = rowTC + i - 1;
 			
 			}
-			else if (tc.getTcImageResults().size() == 1)
-			{   
-				j = rowTC;
-				
+			else if (tc.getTcImageResults().size()==1)
+			{ 	j =rowTC;
 			}
 			
 			/* Merge cell */
@@ -349,8 +347,9 @@ public class ExcelHandle {
 			sheet.addMergedRegion(mergePre);
 			sheet.addMergedRegion(mergeStep);
 			sheet.addMergedRegion(mergeExpt);
-			
 		}
+		
+		
 		/*remove the old rows after write*/
 		for (int i = rowTC+1; i <= sheet.getLastRowNum(); i++) {
 		    XSSFRow row1 = sheet.getRow(i);
